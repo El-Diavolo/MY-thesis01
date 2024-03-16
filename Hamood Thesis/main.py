@@ -10,4 +10,6 @@ https://docs.python.org/3/tutorial/modules.html
 import modules
 from config import setup, functionality
 
+print('HELLO')
+
 run_scans()
