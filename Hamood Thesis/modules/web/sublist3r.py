@@ -2,16 +2,20 @@ import subprocess
 import json
 
 def find_subdomains(domain):
-    # Call the sublist3r command
-    process = subprocess.Popen(['sublist3r', '-d', domain, '-o', '-'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    stdout, stderr = process.communicate()
+    results = set()
+    # Sublist3r
+    print("[*] Starting subdomain enumeration with Sublist3r...")
+    subprocess.call(["sublist3r", "-d", domain, "-o", "subdomains_sublist3r.txt"])
+    # Read the output from the file
+    try:
+        with open("subdomains_sublist3r.txt", "r") as file:
+            for line in file:
+                results.add(line.strip())
+    except FileNotFoundError:
+        print("Sublist3r did not generate an output file.")
+        return None
     
-    # Handle errors
-    if process.returncode != 0:
-        print(f"Error finding subdomains: {stderr}")
-        return []
+    return results
     
-    # Parse the output from JSON if Sublist3r is set up to output JSON
-    subdomains = json.loads(stdout.decode('utf-8'))
     
-    return subdomains
+    
