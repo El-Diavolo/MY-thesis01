@@ -1,0 +1,24 @@
+{
+    "name": "Kali Linux Thesis Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USER": "testuser",
+            "PASS": "3112"
+        }
+    },
+    "features": {
+    },
+    "forwardPorts": [80, 443],
+    "postCreateCommand": "echo 'Container ready!'",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+            ]
+        }
+    },
+    "remoteUser": "testuser"
+}
