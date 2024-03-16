@@ -2,11 +2,8 @@
     "name": "Kali Linux Thesis Development",
     "build": {
         "context": "..",
-        "dockerfile": "../Dockerfile",
-        "args": {
-            "USER": "testuser",
-            "PASS": "1234"
-        }
+        "dockerfile": "../Dockerfile"
+        
     },
     "features": {
     },
@@ -20,6 +17,5 @@
             "extensions": [
             ]
         }
-    },
-    "remoteUser": "testuser"
+    }
 }
