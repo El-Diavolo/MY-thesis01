@@ -7,39 +7,25 @@
 https://docs.python.org/3/tutorial/modules.html
 """
 
-from modules.web.sublist3r import find_subdomains
+from modules.web import *
+
 from config import setup, functionality
 import subprocess
 import sys
 import os
 
-WORDLISTS_DIR = "/usr/share/wordlists/dirb/"
-
-def find_subdomains_with_sublist3r(target_domain):
-    """
-    Finds subdomains for the given target domain using Sublist3r.
-    """
-    if not target_domain:
-        print("Usage: python3 main.py [target-domain]")
-        return
-
-    # Find subdomains using Sublist3r
-    print(f"[*] Finding subdomains for {target_domain} using Sublist3r...")
-    subdomains = find_subdomains(target_domain)
-    if subdomains:
-        print(f"Found subdomains for {target_domain}:")
-        for subdomain in subdomains:
-            print(subdomain)
-    else:
-        print(f"No subdomains found for {target_domain}.")
-
+##wordlist_path = '/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt'
+wordlist_path = '/workspaces/MY-thesis01/Hamood Thesis/test/testwordlist.txt'
+directory_path = "/workspaces/MY-thesis01/Hamood Thesis/results/subdomains"
+results_dir = "/workspaces/MY-thesis01/Hamood Thesis/results/directories"
 
 def main(target_domain):
     print('hlo')
     if not target_domain:
         print("Usage: python3 script.py [target-domain]")
     else:
-        find_subdomains_with_sublist3r(target_domain)
+        find_subdomains(target_domain)
+        read_subdomains_and_run_ffuf(directory_path , wordlist_path ,results_dir)
         return
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+test
+admin
+hello
+shop
+cart
+profile
+index
+main
+contact
