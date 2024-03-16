@@ -1,6 +1,6 @@
 FROM kalilinux/kali-rolling
 
-COPY . /home/kali/Desktop/MY-Thesis
+COPY  c:/Users/hamoo/Desktop/thesis/MY-thesis01/Hamood Thesis/main.py /home/kali/Desktop/MY-Thesis/
 
 WORKDIR /home/kali/Desktop/MY-Thesis
 
