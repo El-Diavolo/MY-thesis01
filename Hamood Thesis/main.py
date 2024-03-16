@@ -10,6 +10,7 @@ https://docs.python.org/3/tutorial/modules.html
 import modules
 from config import setup, functionality
 
+print('hello')
 
 def main(domain):
     # Get a list of subdomains using sublist3r
