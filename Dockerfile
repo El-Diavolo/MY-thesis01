@@ -4,7 +4,7 @@ COPY  . /home/kali/Desktop/MY-Thesis/
 
 WORKDIR /home/kali/Desktop/MY-Thesis
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get upgrade -y
 
 ARG USER=testuser
 ARG PASS=3112
