@@ -1,10 +1,12 @@
 FROM kalilinux/kali-rolling
 
-COPY  . /home/kali/Desktop/MY-Thesis/
+COPY  . /usr/src/MY-Thesis/
 
-WORKDIR /home/kali/Desktop/MY-Thesis
+WORKDIR /usr/src/MY-Thesis/
 
-RUN apt-get update -y && apt-get install -y 
+RUN apt-get update && \
+    apt-get install -y git nmap ffuf sublist3r nuclei shodan python3 subfinder httpx && \
+    apt-get clean 
 
 
 EXPOSE 80

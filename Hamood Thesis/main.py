@@ -35,6 +35,7 @@ def find_subdomains_with_sublist3r(target_domain):
 
 
 def main(target_domain):
+    print('hello')
     if not target_domain:
         print("Usage: python3 script.py [target-domain]")
     else:
