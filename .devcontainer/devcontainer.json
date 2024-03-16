@@ -4,8 +4,8 @@
         "context": "..",
         "dockerfile": "../Dockerfile",
         "args": {
-            "USER": "testuser",
-            "PASS": "3112"
+            "USER": "kali",
+            "PASS": "kali"
         }
     },
     "features": {
