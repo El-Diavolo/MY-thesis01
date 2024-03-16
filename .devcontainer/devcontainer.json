@@ -1,7 +1,8 @@
 {
     "name": "Kali Linux Thesis Development",
     "build": {
-        "dockerfile": "Dockerfile",
+        "context": "..",
+        "dockerfile": "../Dockerfile",
         "args": {
             "USER": "testuser",
             "PASS": "3112"
