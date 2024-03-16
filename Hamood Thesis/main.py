@@ -10,6 +10,17 @@ https://docs.python.org/3/tutorial/modules.html
 import modules
 from config import setup, functionality
 
-print('HELLO')
 
-run_scans()
+def main(domain):
+    # Get a list of subdomains using sublist3r
+    subdomains = find_subdomains(domain)
+    
+    # Run ffuf on each subdomain
+    for subdomain in subdomains:
+        print(f"Fuzzing {subdomain}...")
+        run_ffuf(subdomain)
+
+if __name__ == "__main__":
+    domain = "example.com"
+    main(domain)
+
