@@ -1,0 +1,3 @@
+rich
+configparser
+python-dotenv
