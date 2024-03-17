@@ -1,0 +1,36 @@
+{
+    "online": {
+        "pay.gamehub.om": {
+            "status_code": 200
+        },
+        "cpcontacts.gamehub.om": {
+            "status_code": 500
+        },
+        "webmail.gamehub.om": {
+            "status_code": 500
+        },
+        "webdisk.gamehub.om": {
+            "status_code": 500
+        },
+        "cpcalendars.gamehub.om": {
+            "status_code": 500
+        },
+        "cpanel.gamehub.om": {
+            "status_code": 500
+        },
+        "autodiscover.gamehub.om": {
+            "status_code": 400
+        },
+        "www.gamehub.om": {
+            "status_code": 301
+        },
+        "mail.gamehub.om": {
+            "status_code": 301
+        }
+    },
+    "offline": {
+        "www.pay.gamehub.om": {
+            "error": "[Errno -2] Name or service not known"
+        }
+    }
+}

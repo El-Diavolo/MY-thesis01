@@ -16,7 +16,7 @@ def main(target_domain):
     print('Starting scans for:', target_domain)
     
     # Define tasks to run concurrently
-    '''tasks = [scan_common_ports, find_subdomains]
+    tasks = [scan_common_ports, find_subdomains]
     
     # Use ThreadPoolExecutor to execute multiple tasks concurrently
     with ThreadPoolExecutor(max_workers=len(tasks)) as executor:
@@ -30,10 +30,10 @@ def main(target_domain):
             except Exception as exc:
                 print(f'{task.__name__} generated an exception: {exc}')
             else:
-                print(f'{task.__name__} completed with result: {data}')'''
+                print(f'{task.__name__} completed with result: {data}')
     
     # After concurrent tasks, proceed with other tasks that depend on their results
-    ##read_subdomains_and_run_ffuf(directory_path, wordlist_path, results_dir)
+    read_subdomains_and_run_ffuf(directory_path, wordlist_path, results_dir)
     run_httpx(directory_path)
 
 if __name__ == "__main__":

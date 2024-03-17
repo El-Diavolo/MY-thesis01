@@ -2,8 +2,8 @@
     "nmaprun": {
         "@scanner": "nmap",
         "@args": "nmap -oX - -sS gamehub.om",
-        "@start": "1710708366",
-        "@startstr": "Sun Mar 17 20:46:06 2024",
+        "@start": "1710710184",
+        "@startstr": "Sun Mar 17 21:16:24 2024",
         "@version": "7.94SVN",
         "@xmloutputversion": "1.05",
         "scaninfo": {
@@ -25,7 +25,7 @@
                 "@reason_ttl": "0"
             },
             "address": {
-                "@addr": "172.67.192.127",
+                "@addr": "104.21.68.88",
                 "@addrtype": "ipv4"
             },
             "hostnames": {
@@ -36,15 +36,15 @@
             }
         },
         "host": {
-            "@starttime": "1710708367",
-            "@endtime": "1710708382",
+            "@starttime": "1710710184",
+            "@endtime": "1710710197",
             "status": {
                 "@state": "up",
                 "@reason": "reset",
                 "@reason_ttl": "63"
             },
             "address": {
-                "@addr": "172.67.192.127",
+                "@addr": "104.21.68.88",
                 "@addrtype": "ipv4"
             },
             "hostnames": {
@@ -124,17 +124,17 @@
                 ]
             },
             "times": {
-                "@srtt": "43826",
-                "@rttvar": "76582",
-                "@to": "350154"
+                "@srtt": "36689",
+                "@rttvar": "63113",
+                "@to": "289141"
             }
         },
         "runstats": {
             "finished": {
-                "@time": "1710708382",
-                "@timestr": "Sun Mar 17 20:46:22 2024",
-                "@summary": "Nmap done at Sun Mar 17 20:46:22 2024; 1 IP address (1 host up) scanned in 15.69 seconds",
-                "@elapsed": "15.69",
+                "@time": "1710710197",
+                "@timestr": "Sun Mar 17 21:16:37 2024",
+                "@summary": "Nmap done at Sun Mar 17 21:16:37 2024; 1 IP address (1 host up) scanned in 13.29 seconds",
+                "@elapsed": "13.29",
                 "@exit": "success"
             },
             "hosts": {

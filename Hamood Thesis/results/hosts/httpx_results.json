@@ -1,12 +1,12 @@
 {
     "online": [
+        "webmail.gamehub.om",
+        "autodiscover.gamehub.om",
         "pay.gamehub.om",
         "cpcontacts.gamehub.om",
-        "cpanel.gamehub.om",
-        "autodiscover.gamehub.om",
         "webdisk.gamehub.om",
+        "cpanel.gamehub.om",
         "cpcalendars.gamehub.om",
-        "webmail.gamehub.om",
         "www.gamehub.om",
         "mail.gamehub.om"
     ],
