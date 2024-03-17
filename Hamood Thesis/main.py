@@ -9,7 +9,7 @@ from modules.network import scan_common_ports
 
 # Paths configuration
 wordlist_path = '/workspaces/MY-thesis01/Hamood Thesis/test/testwordlist.txt'
-directory_path = "/workspaces/MY-thesis01/Hamood Thesis/results/subdomains"
+hosts_path = "/workspaces/MY-thesis01/Hamood Thesis/results/hosts"
 results_dir = "/workspaces/MY-thesis01/Hamood Thesis/results/directories"
 
 def main(target_domain):
@@ -33,8 +33,9 @@ def main(target_domain):
                 print(f'{task.__name__} completed with result: {data}')
     
     # After concurrent tasks, proceed with other tasks that depend on their results
-    read_subdomains_and_run_ffuf(directory_path, wordlist_path, results_dir)
-    run_httpx(directory_path)
+    run_httpx(target_domain)
+    read_subdomains_and_run_ffuf(target_domain,hosts_path, wordlist_path, results_dir)
+    
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

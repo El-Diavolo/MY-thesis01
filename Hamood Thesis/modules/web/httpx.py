@@ -31,16 +31,16 @@ def get_subdomains_from_directory(subdomains_dir='results/subdomains'):
                 subdomains.extend(file.read().splitlines())
     return list(set(subdomains))
 
-def run_httpx(target, subdomains_dir='results/subdomains'):
-    subdomains = get_subdomains_from_directory(subdomains_dir)
+def run_httpx(target_domain, results_base_dir='/workspaces/MY-thesis01/Hamood Thesis/results'):
+    subdomains = get_subdomains_from_directory(os.path.join(results_base_dir, 'subdomains'))
     results = asyncio.run(run_checks(subdomains))
     
-    results_dir = 'results/hosts'
+    results_dir = os.path.join(results_base_dir, 'hosts')  # Ensuring the correct output directory is used
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
 
-    # Modify the file name to include the target variable
-    results_file_name = f"{target}_httpx_results.json"
+    # Using target_domain in the file name for specificity
+    results_file_name = f"{target_domain}_httpx_results.json"
     results_file_path = os.path.join(results_dir, results_file_name)
     with open(results_file_path, 'w') as json_file:
         json.dump(results, json_file, indent=4)

@@ -1,30 +1,30 @@
 {
     "online": {
-        "pay.gamehub.om": {
-            "status_code": 200
-        },
-        "cpcontacts.gamehub.om": {
-            "status_code": 500
-        },
-        "webmail.gamehub.om": {
+        "cpanel.gamehub.om": {
             "status_code": 500
         },
         "webdisk.gamehub.om": {
             "status_code": 500
         },
+        "cpcontacts.gamehub.om": {
+            "status_code": 500
+        },
+        "pay.gamehub.om": {
+            "status_code": 200
+        },
         "cpcalendars.gamehub.om": {
             "status_code": 500
         },
-        "cpanel.gamehub.om": {
+        "webmail.gamehub.om": {
             "status_code": 500
         },
         "autodiscover.gamehub.om": {
             "status_code": 400
         },
-        "www.gamehub.om": {
+        "mail.gamehub.om": {
             "status_code": 301
         },
-        "mail.gamehub.om": {
+        "www.gamehub.om": {
             "status_code": 301
         }
     },
