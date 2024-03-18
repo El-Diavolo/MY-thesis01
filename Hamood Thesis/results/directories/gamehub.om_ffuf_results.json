@@ -22,10 +22,22 @@
     "pay.gamehub.om": [],
     "www.gamehub.om": [
         {
+            "url": "https://www.gamehub.om/profile",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/profile",
+            "FUZZ": "profile"
+        },
+        {
             "url": "https://www.gamehub.om/index",
             "status": 301,
             "redirectlocation": "https://gamehub.om/index",
             "FUZZ": "index"
+        },
+        {
+            "url": "https://www.gamehub.om/shop",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/shop/",
+            "FUZZ": "shop"
         },
         {
             "url": "https://www.gamehub.om/hello",
@@ -34,28 +46,10 @@
             "FUZZ": "hello"
         },
         {
-            "url": "https://www.gamehub.om/profile",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/profile",
-            "FUZZ": "profile"
-        },
-        {
-            "url": "https://www.gamehub.om/cart",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/cart/",
-            "FUZZ": "cart"
-        },
-        {
             "url": "https://www.gamehub.om/admin",
             "status": 301,
             "redirectlocation": "https://gamehub.om/admin",
             "FUZZ": "admin"
-        },
-        {
-            "url": "https://www.gamehub.om/main",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/main",
-            "FUZZ": "main"
         },
         {
             "url": "https://www.gamehub.om/test",
@@ -64,10 +58,16 @@
             "FUZZ": "test"
         },
         {
-            "url": "https://www.gamehub.om/shop",
+            "url": "https://www.gamehub.om/cart",
             "status": 301,
-            "redirectlocation": "https://gamehub.om/shop/",
-            "FUZZ": "shop"
+            "redirectlocation": "https://gamehub.om/cart/",
+            "FUZZ": "cart"
+        },
+        {
+            "url": "https://www.gamehub.om/main",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/main",
+            "FUZZ": "main"
         }
     ]
 }

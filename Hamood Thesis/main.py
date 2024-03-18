@@ -4,7 +4,7 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Assuming these functions are defined in the imported modules
-from modules.web import find_subdomains, read_subdomains_and_run_ffuf , run_httpx , shodan_search
+from modules.web import find_subdomains, read_subdomains_and_run_ffuf , run_httpx , shodan_search , run_nuclei_scan
 from modules.network import scan_common_ports
 
 # Paths configuration
@@ -34,8 +34,8 @@ def main(target_domain):
                 print(f'Task generated an exception: {exc}')
     
     # After concurrent tasks, proceed with other tasks that depend on their results
-    shodan_search(api_key,target_domain)
     run_httpx(target_domain)
+    run_nuclei_scan()
     read_subdomains_and_run_ffuf(target_domain,hosts_path, wordlist_path, results_dir)
     
 

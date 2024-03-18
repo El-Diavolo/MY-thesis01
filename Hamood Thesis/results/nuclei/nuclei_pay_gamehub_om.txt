@@ -1,0 +1,10 @@
+[fingerprinthub-web-fingerprints:openfire] [http] [info] https://pay.gamehub.om
+[cluster-f41b080f17d333baa41e06ef4ed382680c31cba358c4711af2692497999c1b5c] [http] [info] https://pay.gamehub.om
+[metatag-cms] [http] [info] https://pay.gamehub.om ["Mobirise v4.8.7, mobirise.com"]
+[tech-detect:cloudflare] [http] [info] https://pay.gamehub.om
+[tech-detect:mobirise] [http] [info] https://pay.gamehub.om
+[tech-detect:bootstrap] [http] [info] https://pay.gamehub.om
+[tech-detect:express] [http] [info] https://pay.gamehub.om
+[waf-detect:cloudflare] [http] [info] https://pay.gamehub.om/
+[cluster-f41b080f17d333baa41e06ef4ed382680c31cba358c4711af2692497999c1b5c] [http] [info] https://pay.gamehub.om
+[metatag-cms] [http] [info] https://pay.gamehub.om ["Mobirise v4.8.7, mobirise.com"]

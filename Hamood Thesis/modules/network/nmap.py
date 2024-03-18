@@ -55,7 +55,7 @@ def scan_common_ports(target):
         with open(json_output_path, 'w') as json_file:
             json.dump(refined_result, json_file, indent=4)
         
-        print(f"Scan results saved in JSON format at {json_output_path}")
+        print(f"Nmap Scan was done succesfully, results saved in JSON format at {json_output_path}")
                     
     except nmap.PortScannerError:
         print("Nmap not found", sys.exc_info()[0])
