@@ -1,4 +1,3 @@
-# nmap.py
 import nmap
 import sys
 import os
@@ -14,20 +13,47 @@ def scan_common_ports(target):
     try:
         # Perform an Nmap scan on the target with a full TCP SYN scan
         nm.scan(target, arguments='-sS')
-        print(f"Starting scan on host: {target}")
+        print(f"Starting nmap scan on host: {target}")
 
         # Access the XML output from the last scan
         xml_output = nm.get_nmap_last_output()
         
         # Convert XML to JSON
-        json_result = xmltodict.parse(xml_output)
+        raw_json_result = xmltodict.parse(xml_output)
+        
+        # Filter and reformat the JSON output
+        refined_result = {
+            "host": target,
+            "open_ports": []
+        }
+
+        # Extracting open ports and service information
+        try:
+            ports = raw_json_result['nmaprun']['host']['ports']['port']
+            if isinstance(ports, list):  # Multiple ports
+                for port in ports:
+                    if port['state']['@state'] == 'open':
+                        refined_result['open_ports'].append({
+                            "port": port['@portid'],
+                            "protocol": port['@protocol'],
+                            "service": port.get('service', {}).get('@name', 'unknown')
+                        })
+            else:  # Single port
+                if ports['state']['@state'] == 'open':
+                    refined_result['open_ports'].append({
+                        "port": ports['@portid'],
+                        "protocol": ports['@protocol'],
+                        "service": ports.get('service', {}).get('@name', 'unknown')
+                    })
+        except KeyError:  # Handle cases where no open ports are found
+            print(f"No open ports found for {target}")
 
         # Define the path for the JSON output
-        json_output_path = os.path.join(results_dir, f"{target}_nmap_scan.json")
+        json_output_path = os.path.join(results_dir, f"{target.replace('/', '_').replace(':', '_')}_nmap_scan.json")
 
-        # Save the JSON result
+        # Save the refined JSON result
         with open(json_output_path, 'w') as json_file:
-            json.dump(json_result, json_file, indent=4)
+            json.dump(refined_result, json_file, indent=4)
         
         print(f"Scan results saved in JSON format at {json_output_path}")
                     

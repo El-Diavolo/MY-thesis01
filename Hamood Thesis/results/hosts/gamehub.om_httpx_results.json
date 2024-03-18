@@ -1,5 +1,11 @@
 {
     "online": {
+        "pay.gamehub.om": {
+            "status_code": 200
+        },
+        "cpcalendars.gamehub.om": {
+            "status_code": 500
+        },
         "cpanel.gamehub.om": {
             "status_code": 500
         },
@@ -7,12 +13,6 @@
             "status_code": 500
         },
         "cpcontacts.gamehub.om": {
-            "status_code": 500
-        },
-        "pay.gamehub.om": {
-            "status_code": 200
-        },
-        "cpcalendars.gamehub.om": {
             "status_code": 500
         },
         "webmail.gamehub.om": {

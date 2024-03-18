@@ -1,35 +1,43 @@
 import shodan
-import sys
+import json
+import os
 
-def shodan_search(api_key, query):
-    # Initialize the Shodan client with your API key
+def filter_results(matches):
+    """Extract and return filtered information from Shodan search results."""
+    filtered_results = []
+    for result in matches:
+        filtered_result = {
+            'ip': result.get('ip_str', 'n/a'),
+            'ports': result.get('ports', []),
+            'org': result.get('org', 'n/a'),
+            'os': result.get('os', 'n/a'),
+            # Include other relevant fields as necessary
+        }
+        # Optionally, include more complex fields if available
+        if 'http' in result:
+            filtered_result['http'] = {
+                'server': result['http'].get('server', 'n/a'),
+                'title': result['http'].get('title', 'n/a')
+            }
+        filtered_results.append(filtered_result)
+    return filtered_results
+
+def shodan_search(api_key, query, output_dir='results/shodan'):
     api = shodan.Shodan(api_key)
-    
+    os.makedirs(output_dir, exist_ok=True)
+    output_file_path = os.path.join(output_dir, f"{query.replace(' ', '_')}_shodan_results.json")
+
     try:
-        # Perform the search on Shodan
         results = api.search(query)
         print(f"Results found: {results['total']}")
         
-        # Loop through the matches and print some data
-        for result in results['matches']:
-            print("IP: {}".format(result['ip_str']))
-            print("Organization: {}".format(result.get('org', 'n/a')))
-            print("Operating System: {}".format(result.get('os', 'n/a')))
-            # Add more fields as necessary
-            
-            # Print available ports
-            ports = ", ".join(str(port) for port in result['ports']) if 'ports' in result else 'n/a'
-            print(f"Ports: {ports}")
-            
-            print("")  # Newline for readability between records
+        # Filter the results to include only the relevant information
+        filtered_results = filter_results(results['matches'])
+        
+        # Save the filtered results to a JSON file
+        with open(output_file_path, 'w') as file:
+            json.dump(filtered_results, file, indent=4)
+        
+        print(f"Filtered Shodan search results saved to {output_file_path}")
     except shodan.APIError as e:
         print(f"Error: {e}")
-
-if __name__ == "__main__":
-    if len(sys.argv) == 3:
-        api_key = sys.argv[1]
-        query = sys.argv[2]
-        shodan_search(api_key, query)
-    else:
-        print("Usage: %s <API key> <search query>" % sys.argv[0])
-        sys.exit(1)

@@ -1,10 +1,10 @@
 {
     "mail.gamehub.om": [
         {
-            "url": "https://mail.gamehub.om/shop",
+            "url": "https://mail.gamehub.om/cart",
             "status": 301,
-            "redirectlocation": "https://mail.gamehub.om/shop/",
-            "FUZZ": "shop"
+            "redirectlocation": "https://mail.gamehub.om/cart/",
+            "FUZZ": "cart"
         },
         {
             "url": "https://mail.gamehub.om/admin",
@@ -13,10 +13,10 @@
             "FUZZ": "admin"
         },
         {
-            "url": "https://mail.gamehub.om/cart",
+            "url": "https://mail.gamehub.om/shop",
             "status": 301,
-            "redirectlocation": "https://mail.gamehub.om/cart/",
-            "FUZZ": "cart"
+            "redirectlocation": "https://mail.gamehub.om/shop/",
+            "FUZZ": "shop"
         },
         {
             "url": "https://mail.gamehub.om/contact",
@@ -28,40 +28,22 @@
     "pay.gamehub.om": [],
     "www.gamehub.om": [
         {
-            "url": "https://www.gamehub.om/hello",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/hello-world/",
-            "FUZZ": "hello"
-        },
-        {
-            "url": "https://www.gamehub.om/index",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/index",
-            "FUZZ": "index"
-        },
-        {
-            "url": "https://www.gamehub.om/cart",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/cart/",
-            "FUZZ": "cart"
-        },
-        {
             "url": "https://www.gamehub.om/contact",
             "status": 301,
             "redirectlocation": "https://gamehub.om/contact/",
             "FUZZ": "contact"
         },
         {
+            "url": "https://www.gamehub.om/hello",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/hello-world/",
+            "FUZZ": "hello"
+        },
+        {
             "url": "https://www.gamehub.om/test",
             "status": 301,
             "redirectlocation": "https://gamehub.om/test",
             "FUZZ": "test"
-        },
-        {
-            "url": "https://www.gamehub.om/admin",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/admin",
-            "FUZZ": "admin"
         },
         {
             "url": "https://www.gamehub.om/profile",
@@ -74,6 +56,24 @@
             "status": 301,
             "redirectlocation": "https://gamehub.om/main",
             "FUZZ": "main"
+        },
+        {
+            "url": "https://www.gamehub.om/cart",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/cart/",
+            "FUZZ": "cart"
+        },
+        {
+            "url": "https://www.gamehub.om/admin",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/admin",
+            "FUZZ": "admin"
+        },
+        {
+            "url": "https://www.gamehub.om/index",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/index",
+            "FUZZ": "index"
         },
         {
             "url": "https://www.gamehub.om/shop",
