@@ -9,9 +9,6 @@
         "cpanel.gamehub.om": {
             "status_code": 500
         },
-        "webdisk.gamehub.om": {
-            "status_code": 500
-        },
         "cpcontacts.gamehub.om": {
             "status_code": 500
         },
@@ -20,6 +17,9 @@
         },
         "autodiscover.gamehub.om": {
             "status_code": 400
+        },
+        "webdisk.gamehub.om": {
+            "status_code": 500
         },
         "mail.gamehub.om": {
             "status_code": 301

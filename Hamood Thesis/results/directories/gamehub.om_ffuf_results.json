@@ -17,21 +17,15 @@
             "status": 301,
             "redirectlocation": "https://mail.gamehub.om/shop/",
             "FUZZ": "shop"
-        },
-        {
-            "url": "https://mail.gamehub.om/contact",
-            "status": 301,
-            "redirectlocation": "https://mail.gamehub.om/contact/",
-            "FUZZ": "contact"
         }
     ],
     "pay.gamehub.om": [],
     "www.gamehub.om": [
         {
-            "url": "https://www.gamehub.om/contact",
+            "url": "https://www.gamehub.om/index",
             "status": 301,
-            "redirectlocation": "https://gamehub.om/contact/",
-            "FUZZ": "contact"
+            "redirectlocation": "https://gamehub.om/index",
+            "FUZZ": "index"
         },
         {
             "url": "https://www.gamehub.om/hello",
@@ -40,22 +34,10 @@
             "FUZZ": "hello"
         },
         {
-            "url": "https://www.gamehub.om/test",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/test",
-            "FUZZ": "test"
-        },
-        {
             "url": "https://www.gamehub.om/profile",
             "status": 301,
             "redirectlocation": "https://gamehub.om/profile",
             "FUZZ": "profile"
-        },
-        {
-            "url": "https://www.gamehub.om/main",
-            "status": 301,
-            "redirectlocation": "https://gamehub.om/main",
-            "FUZZ": "main"
         },
         {
             "url": "https://www.gamehub.om/cart",
@@ -70,10 +52,16 @@
             "FUZZ": "admin"
         },
         {
-            "url": "https://www.gamehub.om/index",
+            "url": "https://www.gamehub.om/main",
             "status": 301,
-            "redirectlocation": "https://gamehub.om/index",
-            "FUZZ": "index"
+            "redirectlocation": "https://gamehub.om/main",
+            "FUZZ": "main"
+        },
+        {
+            "url": "https://www.gamehub.om/test",
+            "status": 301,
+            "redirectlocation": "https://gamehub.om/test",
+            "FUZZ": "test"
         },
         {
             "url": "https://www.gamehub.om/shop",
