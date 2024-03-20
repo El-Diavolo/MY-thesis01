@@ -4,7 +4,7 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Assuming these functions are defined in the imported modules
-from modules.web import find_subdomains, read_subdomains_and_run_ffuf , run_httpx , shodan_search , run_nuclei_scan
+from modules.web import find_subdomains, read_subdomains_and_run_ffuf , run_httpx , shodan_search , run_nuclei_scan , run_tech_stack_detection
 from modules.network import scan_common_ports
 
 # Paths configuration
@@ -21,12 +21,13 @@ def main(target_domain):
     # Use ThreadPoolExecutor to execute multiple tasks concurrently
     with ThreadPoolExecutor() as executor:
         # Submit tasks
-        future_scan = executor.submit(scan_common_ports, target_domain)
+        #future_scan = executor.submit(scan_common_ports, target_domain)
         future_subdomains = executor.submit(find_subdomains, target_domain)
         future_shodan = executor.submit(shodan_search, api_key, target_domain)
 
-        # As tasks complete, print their result
-        for future in as_completed([future_scan, future_subdomains, future_shodan]):
+        # As tasks complete, print their result 
+        # add future scan later :
+        for future in as_completed([future_subdomains, future_shodan]):
             try:
                 data = future.result()
                 print(f'Task completed with result: {data}')
@@ -35,9 +36,9 @@ def main(target_domain):
     
     # After concurrent tasks, proceed with other tasks that depend on their results
     run_httpx(target_domain)
-    run_nuclei_scan()
-    read_subdomains_and_run_ffuf(target_domain,hosts_path, wordlist_path, results_dir)
-    
+    #run_nuclei_scan()
+    #read_subdomains_and_run_ffuf(target_domain,hosts_path, wordlist_path, results_dir)
+    run_tech_stack_detection()
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
