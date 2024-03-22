@@ -18,16 +18,19 @@ def parse_wappy_output_to_json(text_output):
             tech_stack[tech].append({'detail': detail, 'version': version or 'nil'})
     return tech_stack
 
+import subprocess
+import os
+import json
+
 def run_tech_stack_detection(hosts_dir='results/hosts', output_dir='results/techstack'):
-    """
-    Detects tech stacks for hosts based on online status and specific status codes from JSON files.
-    Outputs the results into JSON files in the specified output directory.
-    """
     os.makedirs(output_dir, exist_ok=True)
+    print(f"Output directory: {output_dir}")
 
     for filename in os.listdir(hosts_dir):
         if filename.endswith('.json'):
             filepath = os.path.join(hosts_dir, filename)
+            print(f"Processing file: {filepath}")
+
             with open(filepath, 'r') as file:
                 hosts_data = json.load(file)
                 online_hosts = hosts_data.get('online', {})
@@ -35,17 +38,22 @@ def run_tech_stack_detection(hosts_dir='results/hosts', output_dir='results/tech
                 for host, details in online_hosts.items():
                     if details.get('status_code') in [200, 301]:
                         output_file = os.path.join(output_dir, f"{host.replace('https://', '').replace('http://', '').replace('/', '_')}_tech_stack.json")
-                        command = ['wappy', '-u', host , '-wf' , output_file]  # Adjust command as needed
+                        command = ['wappy', '-u', host]  # Update command as per actual usage
+                        
+                        print(f"Running command: {' '.join(command)}")
                         try:
                             result = subprocess.run(command, check=True, capture_output=True, text=True)
-                            tech_stack_data = parse_wappy_output_to_json(result.stdout)
-                            
-                            output_file = os.path.join(output_dir, f"{host.replace('https://', '').replace('http://', '').replace('/', '_')}_tech_stack.json")
-                            with open(output_file, 'w') as f:
-                                json.dump(tech_stack_data, f, indent=4)
-                            print(f"Tech stack detection completed for {host}. Results saved to {output_file}")
+                            if result.stdout:
+                                with open(output_file, 'w') as f:
+                                    f.write(result.stdout)
+                                print(f"Tech stack detection completed for {host}. Results saved to {output_file}")
+                            else:
+                                print(f"No output from command for {host}.")
                         except subprocess.CalledProcessError as e:
                             print(f"Error detecting tech stack for {host}: {e}")
+                        except Exception as e:
+                            print(f"Unexpected error for {host}: {e}")
+
 
     compile_and_clean_tech_stacks(output_dir)
 

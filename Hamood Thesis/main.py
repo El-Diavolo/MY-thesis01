@@ -18,43 +18,61 @@ wordlist_path = '/workspaces/MY-thesis01/Hamood Thesis/test/testwordlist.txt'
 hosts_path = "/workspaces/MY-thesis01/Hamood Thesis/results/hosts"
 results_dir = "/workspaces/MY-thesis01/Hamood Thesis/results/directories"
 
-#api keys
+# API keys
 api_key = 'rzmg0Qy3yK0Cuh6AJXiUtEzQaaByNdtY'
 
 def main(target_domain):
     print(f'Starting scans for: {target_domain}')
 
+    initial_tasks = [
+        ('Scan Common Ports', scan_common_ports, target_domain),
+        ('Find Subdomains', find_subdomains, target_domain),
+        ('Shodan Search', shodan_search, api_key, target_domain)
+    ]
+
+    additional_tasks = [
+        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, target_domain, hosts_path, wordlist_path, results_dir),
+        ('Run Tech Stack Detection', run_tech_stack_detection, hosts_path, results_dir)
+        # ('Run Nuclei Scan', run_nuclei_scan, hosts_path, results_dir) # Uncomment if needed
+    ]
+
+    total_tasks = len(initial_tasks) + len(additional_tasks)
     tasks_done = 0
-    initial_tasks = [scan_common_ports, find_subdomains, shodan_search]
-    additional_tasks = [run_nuclei_scan, read_subdomains_and_run_ffuf, run_tech_stack_detection]
-    total_tasks = len(initial_tasks) + len(additional_tasks) + 1  # +1 for run_httpx
 
-    # Initial tasks to run concurrently
+    # Execute initial tasks concurrently
     with ThreadPoolExecutor() as executor:
-        futures = {executor.submit(task, target_domain): task for task in initial_tasks}
-        futures[executor.submit(run_httpx, target_domain)] = run_httpx  # Adding run_httpx as an initial task
+        future_to_task = {}
+        for i, task_info in enumerate(initial_tasks, 1):
+            print(f'Task {i}/{total_tasks} "{task_info[0]}" started.')
+            future = executor.submit(task_info[1], *task_info[2:])
+            future_to_task[future] = (i, task_info[0])
 
-        for future in as_completed(futures):
-            tasks_done += 1
+        for future in as_completed(future_to_task):
+            i, task_name = future_to_task[future]
             try:
                 future.result()
-                print(f'Task {tasks_done}/{total_tasks} is done')
+                print(f'Task {i}/{total_tasks} "{task_name}" completed.')
+                tasks_done += 1
             except Exception as exc:
-                print(f'Task {tasks_done}/{total_tasks} generated an exception: {exc}')
+                print(f'Task {i}/{total_tasks} "{task_name}" generated an exception: {exc}')
 
-    # Additional tasks to run concurrently after httpx
+    # Execute additional tasks concurrently
+    
+    ('Run HTTPx', run_httpx, target_domain)
     with ThreadPoolExecutor() as executor:
-        futures = {executor.submit(task, hosts_path, results_dir) if task != read_subdomains_and_run_ffuf
-                   else executor.submit(task, target_domain, hosts_path, wordlist_path, results_dir)
-                   for task in additional_tasks}
+        future_to_task = {}
+        for i, task_info in enumerate(additional_tasks, tasks_done + 1):
+            print(f'Task {i}/{total_tasks} "{task_info[0]}" started.')
+            future = executor.submit(task_info[1], *task_info[2:])
+            future_to_task[future] = (i, task_info[0])
 
-        for future in as_completed(futures):
-            tasks_done += 1
+        for future in as_completed(future_to_task):
+            i, task_name = future_to_task[future]
             try:
                 future.result()
-                print(f'Task {tasks_done}/{total_tasks} is done')
+                print(f'Task {i}/{total_tasks} "{task_name}" completed.')
             except Exception as exc:
-                print(f'Task {tasks_done}/{total_tasks} generated an exception: {exc}')
+                print(f'Task {i}/{total_tasks} "{task_name}" generated an exception: {exc}')
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
