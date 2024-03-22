@@ -24,7 +24,8 @@ def run_ffuf(subdomain, wordlist, results_dir):
     
     command = ['ffuf', '-w', wordlist, '-u', f'https://{subdomain}/FUZZ', '-fc', '401,403,500',
                '-o', result_file, '-of', 'json']
-    subprocess.run(command, capture_output=True, text=True)
+    subprocess.run(command, capture_output=True, text=True , )
+
 
 def reformat_results(results):
     formatted_results = []

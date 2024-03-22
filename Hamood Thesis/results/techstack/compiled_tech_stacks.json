@@ -8,20 +8,10 @@
         ]
     },
     "pay.gamehub.om": {
-        "JavaScript libraries": [
+        "Page builders": [
             {
-                "detail": "jQuery",
-                "version": "nil"
-            }
-        ],
-        "PaaS": [
-            {
-                "detail": "Heroku",
-                "version": "nil"
-            },
-            {
-                "detail": "Amazon Web Services",
-                "version": "nil"
+                "detail": "Mobirise",
+                "version": "4.8.7"
             }
         ],
         "Programming languages": [
@@ -36,9 +26,19 @@
                 "version": "nil"
             }
         ],
-        "UI frameworks": [
+        "JavaScript libraries": [
             {
-                "detail": "Bootstrap",
+                "detail": "jQuery",
+                "version": "nil"
+            }
+        ],
+        "PaaS": [
+            {
+                "detail": "Amazon Web Services",
+                "version": "nil"
+            },
+            {
+                "detail": "Heroku",
                 "version": "nil"
             }
         ],
@@ -48,10 +48,10 @@
                 "version": "nil"
             }
         ],
-        "Page builders": [
+        "UI frameworks": [
             {
-                "detail": "Mobirise",
-                "version": "4.8.7"
+                "detail": "Bootstrap",
+                "version": "nil"
             }
         ]
     },

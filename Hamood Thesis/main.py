@@ -24,55 +24,55 @@ api_key = 'rzmg0Qy3yK0Cuh6AJXiUtEzQaaByNdtY'
 def main(target_domain):
     print(f'Starting scans for: {target_domain}')
 
+    # Define initial tasks
     initial_tasks = [
-        ('Scan Common Ports', scan_common_ports, target_domain),
-        ('Find Subdomains', find_subdomains, target_domain),
-        ('Shodan Search', shodan_search, api_key, target_domain)
+        ('Scan Common Ports', scan_common_ports(target_domain)),
+        ('Find Subdomains', find_subdomains),
+        ('Shodan Search', shodan_search)
     ]
 
+    # Define additional tasks
     additional_tasks = [
-        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, target_domain, hosts_path, wordlist_path, results_dir),
-        ('Run Tech Stack Detection', run_tech_stack_detection, hosts_path, results_dir)
-        # ('Run Nuclei Scan', run_nuclei_scan, hosts_path, results_dir) # Uncomment if needed
+        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, results_dir)),
+        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, results_dir)),
+        # Uncomment the following line if `run_nuclei_scan` is to be included
+        # ('Run Nuclei Scan', run_nuclei_scan, (hosts_path, results_dir))
     ]
 
-    total_tasks = len(initial_tasks) + len(additional_tasks)
+    total_tasks = len(initial_tasks) + len(additional_tasks) + 1  # +1 accounts for run_httpx
     tasks_done = 0
 
-    # Execute initial tasks concurrently
+    # Execute initial tasks
     with ThreadPoolExecutor() as executor:
-        future_to_task = {}
-        for i, task_info in enumerate(initial_tasks, 1):
-            print(f'Task {i}/{total_tasks} "{task_info[0]}" started.')
-            future = executor.submit(task_info[1], *task_info[2:])
-            future_to_task[future] = (i, task_info[0])
-
-        for future in as_completed(future_to_task):
-            i, task_name = future_to_task[future]
+        futures = {executor.submit(task, target_domain if task != shodan_search else api_key, target_domain): name for name, task in initial_tasks}
+        for future in as_completed(futures):
+            tasks_done += 1
+            task_name = futures[future]
             try:
                 future.result()
-                print(f'Task {i}/{total_tasks} "{task_name}" completed.')
-                tasks_done += 1
+                print(f'Task {tasks_done}/{total_tasks} "{task_name}" completed.')
             except Exception as exc:
-                print(f'Task {i}/{total_tasks} "{task_name}" generated an exception: {exc}')
+                print(f'Task {tasks_done}/{total_tasks} "{task_name}" generated an exception: {exc}')
 
-    # Execute additional tasks concurrently
-    
-    ('Run HTTPx', run_httpx, target_domain)
+    # Execute HTTPx separately as a bridge task
+    tasks_done += 1
+    try:
+        run_httpx(target_domain)
+        print(f'Task {tasks_done}/{total_tasks} "Run HTTPx" completed.')
+    except Exception as exc:
+        print(f'Task {tasks_done}/{total_tasks} "Run HTTPx" generated an exception: {exc}')
+
+    # Execute additional tasks
     with ThreadPoolExecutor() as executor:
-        future_to_task = {}
-        for i, task_info in enumerate(additional_tasks, tasks_done + 1):
-            print(f'Task {i}/{total_tasks} "{task_info[0]}" started.')
-            future = executor.submit(task_info[1], *task_info[2:])
-            future_to_task[future] = (i, task_info[0])
-
-        for future in as_completed(future_to_task):
-            i, task_name = future_to_task[future]
+        futures = {executor.submit(task, *args): name for name, task, args in additional_tasks}
+        for future in as_completed(futures):
+            tasks_done += 1
+            task_name = futures[future]
             try:
                 future.result()
-                print(f'Task {i}/{total_tasks} "{task_name}" completed.')
+                print(f'Task {tasks_done}/{total_tasks} "{task_name}" completed.')
             except Exception as exc:
-                print(f'Task {i}/{total_tasks} "{task_name}" generated an exception: {exc}')
+                print(f'Task {tasks_done}/{total_tasks} "{task_name}" generated an exception: {exc}')
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

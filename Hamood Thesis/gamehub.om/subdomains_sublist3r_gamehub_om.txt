@@ -1,0 +1,10 @@
+www.gamehub.om
+autodiscover.gamehub.om
+cpanel.gamehub.om
+cpcalendars.gamehub.om
+cpcontacts.gamehub.om
+mail.gamehub.om
+pay.gamehub.om
+www.pay.gamehub.om
+webdisk.gamehub.om
+webmail.gamehub.om

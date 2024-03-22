@@ -15,6 +15,11 @@
             "port": "8080",
             "protocol": "tcp",
             "service": "http-proxy"
+        },
+        {
+            "port": "8443",
+            "protocol": "tcp",
+            "service": "https-alt"
         }
     ]
 }
