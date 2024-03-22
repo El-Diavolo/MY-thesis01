@@ -1,0 +1,64 @@
+{
+    "mail.gamehub.om": {
+        "servers": [
+            {
+                "detail": "Apache",
+                "version": "nil"
+            }
+        ]
+    },
+    "pay.gamehub.om": {
+        "libraries": [
+            {
+                "detail": "jQuery",
+                "version": "nil"
+            }
+        ],
+        "PaaS": [
+            {
+                "detail": "Heroku",
+                "version": "nil"
+            },
+            {
+                "detail": "Amazon Web Services",
+                "version": "nil"
+            }
+        ],
+        "builders": [
+            {
+                "detail": "Mobirise",
+                "version": "4.8.7"
+            }
+        ],
+        "frameworks": [
+            {
+                "detail": "Bootstrap",
+                "version": "nil"
+            },
+            {
+                "detail": "Express",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "languages": [
+            {
+                "detail": "Node.js",
+                "version": "nil"
+            }
+        ]
+    },
+    "www.gamehub.om": {
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ]
+    }
+}

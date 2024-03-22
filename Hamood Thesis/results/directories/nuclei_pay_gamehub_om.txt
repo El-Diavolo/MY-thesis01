@@ -1,0 +1,22 @@
+[caa-fingerprint] [dns] [info] pay.gamehub.om
+[options-method] [http] [info] https://pay.gamehub.om ["GET,HEAD"]
+[addeventlistener-detect] [http] [info] https://pay.gamehub.om
+[fingerprinthub-web-fingerprints:openfire] [http] [info] https://pay.gamehub.om
+[metatag-cms] [http] [info] https://pay.gamehub.om ["Mobirise v4.8.7, mobirise.com"]
+[tech-detect:mobirise] [http] [info] https://pay.gamehub.om
+[tech-detect:bootstrap] [http] [info] https://pay.gamehub.om
+[tech-detect:express] [http] [info] https://pay.gamehub.om
+[tech-detect:cloudflare] [http] [info] https://pay.gamehub.om
+[old-copyright] [http] [info] https://pay.gamehub.om ["Copyright 2018"]
+[http-missing-security-headers:permissions-policy] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:x-frame-options] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:strict-transport-security] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:content-security-policy] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:x-content-type-options] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:referrer-policy] [http] [info] https://pay.gamehub.om
+[http-missing-security-headers:clear-site-data] [http] [info] https://pay.gamehub.om
+[intercom] [http] [info] https://pay.gamehub.om

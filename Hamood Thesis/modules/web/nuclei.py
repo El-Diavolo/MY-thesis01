@@ -9,7 +9,7 @@ def run_single_nuclei_scan(host, output_file):
     """
     command = ["nuclei", "-u", host, "-o", output_file]
     try:
-        subprocess.run(command, check=True) #, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(command, check=True , stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
         print(f"[+] Nuclei scan completed for {host}. Results saved to {output_file}")
     except subprocess.CalledProcessError as e:
         print(f"[-] Error running Nuclei on {host}: {e}")
