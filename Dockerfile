@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get clean 
 
 RUN pip install python-nmap xmltodict shodan
-python3 -m pip install python-Wappalyzer
+RUN python3 -m pip install python-Wappalyzer
 
 EXPOSE 80
 EXPOSE 443

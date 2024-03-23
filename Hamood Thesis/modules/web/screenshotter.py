@@ -1,7 +1,8 @@
 import subprocess
 import os
 
-def run_eyewitness(subdomains_dir='results/subdomains', output_dir='results/screenshots'):
+def run_eyewitness(subdomains_dir = 'results/hosts', output_dir='results/screenshots'):
+    
     """
     Takes screenshots of domains listed in files within the subdomains_dir using EyeWitness,
     attempting to use subprocess and echo to handle prompts.

@@ -8,9 +8,15 @@
         ]
     },
     "pay.gamehub.om": {
-        "Web frameworks": [
+        "CDN": [
             {
-                "detail": "Express",
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "Programming languages": [
+            {
+                "detail": "Node.js",
                 "version": "nil"
             }
         ],
@@ -20,19 +26,9 @@
                 "version": "4.8.7"
             }
         ],
-        "PaaS": [
+        "Web frameworks": [
             {
-                "detail": "Heroku",
-                "version": "nil"
-            },
-            {
-                "detail": "Amazon Web Services",
-                "version": "nil"
-            }
-        ],
-        "CDN": [
-            {
-                "detail": "Cloudflare",
+                "detail": "Express",
                 "version": "nil"
             }
         ],
@@ -48,9 +44,13 @@
                 "version": "nil"
             }
         ],
-        "Programming languages": [
+        "PaaS": [
             {
-                "detail": "Node.js",
+                "detail": "Amazon Web Services",
+                "version": "nil"
+            },
+            {
+                "detail": "Heroku",
                 "version": "nil"
             }
         ]

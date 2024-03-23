@@ -25,29 +25,44 @@ api_key = 'rzmg0Qy3yK0Cuh6AJXiUtEzQaaByNdtY'
 def main(target_domain):
     print(f'Starting scans for: {target_domain}')
 
-    task_list = [
-        ('Scan Common Ports', scan_common_ports, target_domain),
-        ('Find Subdomains', find_subdomains, target_domain),
+    # Phase 1: Concurrent execution of initial tasks
+    initial_tasks = [
+        ('Scan Common Ports', scan_common_ports, (target_domain,)),
+        ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (api_key, target_domain)),
-        ('Run HTTPx', run_httpx, target_domain),
-        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, results_dir)),
-        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
-        ('Running Screenshotter', run_eyewitness, (hosts_path, 'results/screenshots'))
-        # Add 'Run Nuclei Scan' task if needed
     ]
 
+    # Phase 2: Single task execution
+    httpx_task = ('Run HTTPx', run_httpx, (target_domain,))
+
+    # Phase 3: Concurrent execution of additional tasks
+    additional_tasks = [
+        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
+        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
+        ('Running Screenshotter', run_eyewitness, (hosts_path, 'results/screenshots')),
+        # Uncomment the following line if `run_nuclei_scan` is to be included
+        # ('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei'))
+    ]
+
+    # Execute tasks
+    execute_tasks(initial_tasks, "Phase 1: Initial Tasks")
+    execute_tasks([httpx_task], "Phase 2: HTTPx Task")
+    execute_tasks(additional_tasks, "Phase 3: Additional Tasks")
+
+def execute_tasks(tasks, phase_description):
+    total_tasks = len(tasks)
+    print(f'\n{phase_description} - Executing {total_tasks} tasks.')
     with ThreadPoolExecutor() as executor:
-        futures_to_task = {executor.submit(task[1], *(task[2] if isinstance(task[2], tuple) else (task[2],))): task[0] for task in task_list}
-        
-        completed_tasks = 0
-        for future in as_completed(futures_to_task):
-            completed_tasks += 1
+        futures_to_task = {executor.submit(task[1], *task[2]): task[0] for task in tasks}
+
+        for i, future in enumerate(as_completed(futures_to_task), 1):
             task_name = futures_to_task[future]
+            print(f'Task {i}/{total_tasks} "{task_name}" started.')
             try:
                 future.result()
-                print(f'Task {completed_tasks}/{len(task_list)} "{task_name}" completed.')
+                print(f'Task {i}/{total_tasks} "{task_name}" completed.')
             except Exception as exc:
-                print(f'Task {completed_tasks}/{len(task_list)} "{task_name}" generated an exception: {exc}')
+                print(f'Task {i}/{total_tasks} "{task_name}" generated an exception: {exc}')
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
