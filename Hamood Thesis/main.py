@@ -15,7 +15,7 @@ from modules.web import (
 from modules.network import scan_common_ports
 
 # Paths configuration
-wordlist_path = '/workspaces/MY-thesis01/Hamood Thesis/test/testwordlist.txt'
+wordlist_path = '/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt'
 hosts_path = "/workspaces/MY-thesis01/Hamood Thesis/results/hosts"
 results_dir = "/workspaces/MY-thesis01/Hamood Thesis/results/directories"
 
