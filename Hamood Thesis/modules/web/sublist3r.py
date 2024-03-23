@@ -31,5 +31,4 @@ def find_subdomains(domain, output_folder="/workspaces/MY-thesis01/Hamood Thesis
         print(f"Error running Sublist3r: {e}")
         return []
 
-# Example usage
-if __name__ == "__main__":
+
