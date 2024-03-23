@@ -1,0 +1,11 @@
+Protocol,Port,Domain,Request Status,Screenshot Path, Source Path
+http,80,www.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.mail.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.www.gamehub.om.txt
+http,80,autodiscover.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.autodiscover.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.autodiscover.gamehub.om.txt
+http,80,cpanel.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.cpanel.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.cpanel.gamehub.om.txt
+http,80,cpcalendars.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.cpanel.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.cpcalendars.gamehub.om.txt
+http,80,cpcontacts.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.cpanel.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.cpcontacts.gamehub.om.txt
+http,80,mail.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.mail.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.mail.gamehub.om.txt
+http,80,pay.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.pay.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.pay.gamehub.om.txt
+http,80,www.pay.gamehub.om,BadStatus,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.www.pay.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.www.pay.gamehub.om.txt
+http,80,webdisk.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.cpanel.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.webdisk.gamehub.om.txt
+http,80,webmail.gamehub.om,Successful,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/screens/http.cpanel.gamehub.om.png,/workspaces/MY-thesis01/Hamood Thesis/results/screenshots/source/http.webmail.gamehub.om.txt

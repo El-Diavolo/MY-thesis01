@@ -9,7 +9,8 @@ from modules.web import (
     run_httpx,
     shodan_search,
     run_nuclei_scan,
-    run_tech_stack_detection
+    run_tech_stack_detection,
+    run_eyewitness
 )
 from modules.network import scan_common_ports
 
@@ -24,55 +25,29 @@ api_key = 'rzmg0Qy3yK0Cuh6AJXiUtEzQaaByNdtY'
 def main(target_domain):
     print(f'Starting scans for: {target_domain}')
 
-    # Define initial tasks
-    initial_tasks = [
-        ('Scan Common Ports', scan_common_ports(target_domain)),
-        ('Find Subdomains', find_subdomains),
-        ('Shodan Search', shodan_search)
-    ]
-
-    # Define additional tasks
-    additional_tasks = [
+    task_list = [
+        ('Scan Common Ports', scan_common_ports, target_domain),
+        ('Find Subdomains', find_subdomains, target_domain),
+        ('Shodan Search', shodan_search, (api_key, target_domain)),
+        ('Run HTTPx', run_httpx, target_domain),
         ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, results_dir)),
-        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, results_dir)),
-        # Uncomment the following line if `run_nuclei_scan` is to be included
-        # ('Run Nuclei Scan', run_nuclei_scan, (hosts_path, results_dir))
+        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
+        ('Running Screenshotter', run_eyewitness, (hosts_path, 'results/screenshots'))
+        # Add 'Run Nuclei Scan' task if needed
     ]
 
-    total_tasks = len(initial_tasks) + len(additional_tasks) + 1  # +1 accounts for run_httpx
-    tasks_done = 0
-
-    # Execute initial tasks
     with ThreadPoolExecutor() as executor:
-        futures = {executor.submit(task, target_domain if task != shodan_search else api_key, target_domain): name for name, task in initial_tasks}
-        for future in as_completed(futures):
-            tasks_done += 1
-            task_name = futures[future]
+        futures_to_task = {executor.submit(task[1], *(task[2] if isinstance(task[2], tuple) else (task[2],))): task[0] for task in task_list}
+        
+        completed_tasks = 0
+        for future in as_completed(futures_to_task):
+            completed_tasks += 1
+            task_name = futures_to_task[future]
             try:
                 future.result()
-                print(f'Task {tasks_done}/{total_tasks} "{task_name}" completed.')
+                print(f'Task {completed_tasks}/{len(task_list)} "{task_name}" completed.')
             except Exception as exc:
-                print(f'Task {tasks_done}/{total_tasks} "{task_name}" generated an exception: {exc}')
-
-    # Execute HTTPx separately as a bridge task
-    tasks_done += 1
-    try:
-        run_httpx(target_domain)
-        print(f'Task {tasks_done}/{total_tasks} "Run HTTPx" completed.')
-    except Exception as exc:
-        print(f'Task {tasks_done}/{total_tasks} "Run HTTPx" generated an exception: {exc}')
-
-    # Execute additional tasks
-    with ThreadPoolExecutor() as executor:
-        futures = {executor.submit(task, *args): name for name, task, args in additional_tasks}
-        for future in as_completed(futures):
-            tasks_done += 1
-            task_name = futures[future]
-            try:
-                future.result()
-                print(f'Task {tasks_done}/{total_tasks} "{task_name}" completed.')
-            except Exception as exc:
-                print(f'Task {tasks_done}/{total_tasks} "{task_name}" generated an exception: {exc}')
+                print(f'Task {completed_tasks}/{len(task_list)} "{task_name}" generated an exception: {exc}')
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

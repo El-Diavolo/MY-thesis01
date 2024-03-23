@@ -4,4 +4,5 @@ from .nuclei import *
 from .httpx import *
 from .shodan import *
 from .nuclei import *
-from .stack import run_tech_stack_detection
+from .stack import *
+from .screenshotter import *
