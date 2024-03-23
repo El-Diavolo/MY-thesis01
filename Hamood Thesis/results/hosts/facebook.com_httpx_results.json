@@ -1,0 +1,11 @@
+{
+    "online": {
+        "facebook.com": {
+            "status_code": 301
+        },
+        "gamehub.om": {
+            "status_code": 200
+        }
+    },
+    "offline": {}
+}

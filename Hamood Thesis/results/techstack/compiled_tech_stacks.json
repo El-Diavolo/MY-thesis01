@@ -1,1 +1,11 @@
-{}
+{
+    "facebook.com": {},
+    "gamehub.om": {
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ]
+    }
+}
