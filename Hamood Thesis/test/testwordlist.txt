@@ -7,3 +7,5 @@ profile
 index
 main
 contact
+culture
+magazine

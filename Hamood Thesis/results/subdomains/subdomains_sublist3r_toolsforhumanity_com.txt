@@ -1,0 +1,7 @@
+www.toolsforhumanity.com
+app-backend.toolsforhumanity.com
+launch-gift.toolsforhumanity.com
+orbs.toolsforhumanity.com
+staging-orbs.toolsforhumanity.com
+stats.toolsforhumanity.com
+support.toolsforhumanity.com

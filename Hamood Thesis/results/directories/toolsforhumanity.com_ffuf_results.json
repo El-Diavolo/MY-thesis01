@@ -1,0 +1,58 @@
+{
+    "www.toolsforhumanity.com": [
+        {
+            "url": "http://www.toolsforhumanity.com/hello",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/hello",
+            "FUZZ": "hello"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/main",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/main",
+            "FUZZ": "main"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/shop",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/shop",
+            "FUZZ": "shop"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/admin",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/admin",
+            "FUZZ": "admin"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/index",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/index",
+            "FUZZ": "index"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/profile",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/profile",
+            "FUZZ": "profile"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/cart",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/cart",
+            "FUZZ": "cart"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/test",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/test",
+            "FUZZ": "test"
+        },
+        {
+            "url": "http://www.toolsforhumanity.com/contact",
+            "status": 301,
+            "redirectlocation": "https://www.toolsforhumanity.com/contact",
+            "FUZZ": "contact"
+        }
+    ]
+}

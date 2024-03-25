@@ -1,6 +1,11 @@
 {
-    "facebook.com": {},
-    "gamehub.om": {
+    "www.toolsforhumanity.com": {
+        "Web servers": [
+            {
+                "detail": "Vercel",
+                "version": "nil"
+            }
+        ],
         "CDN": [
             {
                 "detail": "Cloudflare",

@@ -1,0 +1,20 @@
+{
+    "host": "toolsforhumanity.com",
+    "open_ports": [
+        {
+            "port": "80",
+            "protocol": "tcp",
+            "service": "http"
+        },
+        {
+            "port": "443",
+            "protocol": "tcp",
+            "service": "https"
+        },
+        {
+            "port": "8080",
+            "protocol": "tcp",
+            "service": "http-proxy"
+        }
+    ]
+}
