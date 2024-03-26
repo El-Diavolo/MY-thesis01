@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-def run_eyewitness(subdomains_dir = 'results/hosts', output_dir='results/screenshots'):
+def run_eyewitness(subdomains_dir = 'results/subdomains', output_dir='results/screenshots'):
     
     """
     Takes screenshots of domains listed in files within the subdomains_dir using EyeWitness,
@@ -20,14 +20,13 @@ def run_eyewitness(subdomains_dir = 'results/hosts', output_dir='results/screens
             command = f"eyewitness --web -f {filepath} --timeout 100 -d {output_dir} --no-prompt"
             
 
-            # Attempt to run EyeWitness with subprocess, using echo to send 'y' and 'n' to prompts
+            
             try:
-                result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                result = subprocess.run(command, shell=True, check=True)
                 print(f"Screenshots completed for {filepath}")
                 if result.stderr:
                     print(f"Error or warning messages: {result.stderr}")
             except subprocess.CalledProcessError as e:
                 print(f"Error running EyeWitness on {filepath}: {e}")
 
-if __name__ == "__main__":
-    run_eyewitness()
+

@@ -1,0 +1,87 @@
+{
+    "online": {
+        "info.backblaze.com": {
+            "status_code": 301
+        },
+        "trynow.backblaze.com": {
+            "status_code": 302
+        },
+        "hub.backblaze.com": {
+            "status_code": 301
+        },
+        "secure.backblaze.com": {
+            "status_code": 301
+        },
+        "help.backblaze.com": {
+            "status_code": 302
+        },
+        "status.backblaze.com": {
+            "status_code": 200
+        },
+        "ir.backblaze.com": {
+            "status_code": 200
+        },
+        "www.backblaze.com": {
+            "status_code": 200
+        },
+        "try.backblaze.com": {
+            "status_code": 200
+        },
+        "postman.backblaze.com": {
+            "status_code": 200
+        },
+        "preferences.backblaze.com": {
+            "status_code": 200
+        },
+        "blog.backblaze.com": {
+            "status_code": 301
+        },
+        "webflow-prod.backblaze.com": {
+            "status_code": 200
+        },
+        "partnerportal.backblaze.com": {
+            "status_code": 302
+        },
+        "securemail.backblaze.com": {
+            "status_code": 403
+        },
+        "testing-preferences.backblaze.com": {
+            "status_code": 200
+        }
+    },
+    "offline": {
+        "secure.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "webflow-staging.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "fn.us.df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.help.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.files.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "fn.eu.df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "fw-sam0-0000.backblaze.com": {
+            "error": ""
+        },
+        "files.backblaze.com": {
+            "error": ""
+        },
+        "dataroom.backblaze.com": {
+            "error": ""
+        }
+    }
+}

@@ -1,14 +1,492 @@
 {
-    "www.toolsforhumanity.com": {
-        "Web servers": [
+    "blog.backblaze.com": {
+        "JavaScript libraries": [
             {
-                "detail": "Vercel",
+                "detail": "jQuery",
+                "version": "3.7.1"
+            },
+            {
+                "detail": "Select2",
+                "version": "nil"
+            },
+            {
+                "detail": "jQuery Migrate",
+                "version": "3.4.1"
+            },
+            {
+                "detail": "Underscore.js",
+                "version": "1.13.4"
+            },
+            {
+                "detail": "Lightbox",
                 "version": "nil"
             }
         ],
         "CDN": [
             {
                 "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "detail": "Highlight.js",
+                "version": "nil"
+            }
+        ],
+        "Programming languages": [
+            {
+                "detail": "PHP",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
+                "version": "nil"
+            },
+            {
+                "detail": "Font Awesome",
+                "version": "6.4.3"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "Databases": [
+            {
+                "detail": "MySQL",
+                "version": "nil"
+            }
+        ],
+        "CMS": [
+            {
+                "detail": "WordPress",
+                "version": "nil"
+            }
+        ],
+        "Cookie compliance": [
+            {
+                "detail": "OneTrust",
+                "version": "nil"
+            }
+        ],
+        "UI frameworks": [
+            {
+                "detail": "Bootstrap",
+                "version": "4.4.0"
+            }
+        ],
+        "PaaS": [
+            {
+                "detail": "WP Engine",
+                "version": "nil"
+            }
+        ]
+    },
+    "hub.backblaze.com": {
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "3.5.1"
+            }
+        ],
+        "Page builders": [
+            {
+                "detail": "Webflow",
+                "version": "nil"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "Cookie compliance": [
+            {
+                "detail": "OneTrust",
+                "version": "nil"
+            }
+        ],
+        "Security": [
+            {
+                "detail": "reCAPTCHA",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ]
+    },
+    "info.backblaze.com": {
+        "Security": [
+            {
+                "detail": "reCAPTCHA",
+                "version": "nil"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "Cookie compliance": [
+            {
+                "detail": "OneTrust",
+                "version": "nil"
+            }
+        ],
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "3.5.1"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "Page builders": [
+            {
+                "detail": "Webflow",
+                "version": "nil"
+            }
+        ]
+    },
+    "ir.backblaze.com": {
+        "Video players": [
+            {
+                "detail": "YouTube",
+                "version": "nil"
+            }
+        ],
+        "Programming languages": [
+            {
+                "detail": "PHP",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "JavaScript libraries": [
+            {
+                "detail": "Modernizr",
+                "version": "nil"
+            },
+            {
+                "detail": "jQuery",
+                "version": "3.5.1"
+            }
+        ],
+        "CMS": [
+            {
+                "detail": "Drupal",
+                "version": "10"
+            }
+        ]
+    },
+    "postman.backblaze.com": {
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ]
+    },
+    "preferences.backblaze.com": {
+        "Programming languages": [
+            {
+                "detail": "Ruby",
+                "version": "nil"
+            }
+        ],
+        "PaaS": [
+            {
+                "detail": "Amazon Web Services",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Font Awesome",
+                "version": "5.8.1"
+            }
+        ],
+        "Web servers": [
+            {
+                "detail": "Nginx",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Amazon Cloudfront",
+                "version": "nil"
+            }
+        ],
+        "Web frameworks": [
+            {
+                "detail": "Ruby on Rails",
+                "version": "nil"
+            }
+        ]
+    },
+    "secure.backblaze.com": {
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "3.5.1"
+            }
+        ],
+        "Page builders": [
+            {
+                "detail": "Webflow",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
+                "version": "nil"
+            }
+        ],
+        "Cookie compliance": [
+            {
+                "detail": "OneTrust",
+                "version": "nil"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "Security": [
+            {
+                "detail": "reCAPTCHA",
+                "version": "nil"
+            }
+        ]
+    },
+    "status.backblaze.com": {
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "Marketing automation": [
+            {
+                "detail": "HubSpot",
+                "version": "nil"
+            }
+        ],
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "1.7.1"
+            }
+        ]
+    },
+    "testing-preferences.backblaze.com": {
+        "Programming languages": [
+            {
+                "detail": "Ruby",
+                "version": "nil"
+            }
+        ],
+        "Web servers": [
+            {
+                "detail": "Nginx",
+                "version": "nil"
+            }
+        ],
+        "Web frameworks": [
+            {
+                "detail": "Ruby on Rails",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Amazon Cloudfront",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Font Awesome",
+                "version": "5.8.1"
+            }
+        ],
+        "PaaS": [
+            {
+                "detail": "Amazon Web Services",
+                "version": "nil"
+            }
+        ]
+    },
+    "try.backblaze.com": {
+        "Widgets": [
+            {
+                "detail": "OWL Carousel",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Font Awesome",
+                "version": "4.7.0"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "Editors": [
+            {
+                "detail": "Unbounce",
+                "version": "nil"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "3.4.1"
+            }
+        ]
+    },
+    "webflow-prod.backblaze.com": {
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "3.5.1"
+            }
+        ],
+        "Security": [
+            {
+                "detail": "reCAPTCHA",
+                "version": "nil"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "Cookie compliance": [
+            {
+                "detail": "OneTrust",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
+                "version": "nil"
+            }
+        ],
+        "Page builders": [
+            {
+                "detail": "Webflow",
+                "version": "nil"
+            }
+        ]
+    },
+    "www.backblaze.com": {
+        "Security": [
+            {
+                "detail": "reCAPTCHA",
+                "version": "nil"
+            }
+        ],
+        "JavaScript libraries": [
+            {
+                "detail": "jQuery",
+                "version": "3.5.1"
+            }
+        ],
+        "Tag managers": [
+            {
+                "detail": "Google Tag Manager",
+                "version": "nil"
+            }
+        ],
+        "Page builders": [
+            {
+                "detail": "Webflow",
+                "version": "nil"
+            }
+        ],
+        "CDN": [
+            {
+                "detail": "Cloudflare",
+                "version": "nil"
+            }
+        ],
+        "Cookie compliance": [
+            {
+                "detail": "OneTrust",
+                "version": "nil"
+            }
+        ],
+        "Font scripts": [
+            {
+                "detail": "Google Font API",
                 "version": "nil"
             }
         ]

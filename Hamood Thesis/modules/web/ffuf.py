@@ -22,7 +22,7 @@ def run_ffuf(subdomain, wordlist, results_dir):
     result_file = os.path.join(results_dir, f'{subdomain.replace(":", "_").replace("/", "_")}_ffuf.json')
     os.makedirs(results_dir, exist_ok=True)
     
-    command = ['ffuf', '-w', wordlist, '-u', f'http://{subdomain}/FUZZ', '-fc', '401,403,500',
+    command = ['ffuf', '-w', wordlist, '-u', f'http://{subdomain}/FUZZ', '-fc', '401,403,500','-r',
                '-o', result_file, '-of', 'json']
     subprocess.run(command, capture_output=True, text=True , )
 
