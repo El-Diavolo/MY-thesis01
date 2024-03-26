@@ -6,3 +6,4 @@ from .shodan import *
 from .nuclei import *
 from .stack import *
 from .screenshotter import *
+from .gospider import *

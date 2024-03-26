@@ -10,7 +10,8 @@ from modules.web import (
     shodan_search,
     run_nuclei_scan,
     run_tech_stack_detection,
-    run_eyewitness
+    run_eyewitness,
+    run_gospider
 )
 from modules.network import scan_common_ports
 
@@ -30,6 +31,7 @@ def main(target_domain):
         ('Scan Common Ports', scan_common_ports, (target_domain,)),
         ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (api_key, target_domain)),
+        ('gospider' , run_gospider, (target_domain))
     ]
 
     # Phase 2: Single task execution
@@ -37,11 +39,11 @@ def main(target_domain):
 
     # Phase 3: Concurrent execution of additional tasks
     additional_tasks = [
-        #('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
-        #('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
+        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
+        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
         #('Running Screenshotter', run_eyewitness, ('results/subdomains', 'results/screenshots')),
         # Uncomment the following line if `run_nuclei_scan` is to be included
-        ('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei'))
+        #('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei'))
     ]
 
     # Execute tasks

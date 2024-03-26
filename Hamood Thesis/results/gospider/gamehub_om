@@ -1,0 +1,4 @@
+[robots] - https://gamehub.om/wp-admin/
+[robots] - https://gamehub.om/wp-admin/admin-ajax.php
+[url] - [code-400] - https://gamehub.om/wp-admin/admin-ajax.php
+[url] - [code-409] - https://gamehub.om/wp-admin/
