@@ -40,7 +40,7 @@ def main(target_domain):
     # Phase 3: Concurrent execution of additional tasks
     additional_tasks = [
         ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
-       #('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
+        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
         #('Running Screenshotter', run_eyewitness, ('results/subdomains', 'results/screenshots')),
         # Uncomment the following line if `run_nuclei_scan` is to be included
         #('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei'))
