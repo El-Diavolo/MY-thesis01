@@ -3,57 +3,102 @@
         "info.backblaze.com": {
             "status_code": 301
         },
+        "secure.backblaze.com": {
+            "status_code": 301
+        },
         "trynow.backblaze.com": {
             "status_code": 302
+        },
+        "www.backblaze.com": {
+            "status_code": 200
+        },
+        "status.backblaze.com": {
+            "status_code": 200
         },
         "hub.backblaze.com": {
             "status_code": 301
         },
-        "secure.backblaze.com": {
+        "tree-ams5-0001.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-ams5-0002.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-ams5-0000.secure.backblaze.com": {
             "status_code": 301
         },
         "help.backblaze.com": {
             "status_code": 302
         },
-        "status.backblaze.com": {
+        "try.backblaze.com": {
             "status_code": 200
         },
         "ir.backblaze.com": {
             "status_code": 200
         },
-        "www.backblaze.com": {
+        "tree-sac0-0008.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "webflow-prod.backblaze.com": {
             "status_code": 200
         },
-        "try.backblaze.com": {
+        "tree-phx1-0002.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-phx1-0001.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0001.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0006.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0003.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "securemail.backblaze.com": {
+            "status_code": 403
+        },
+        "tree-phx1-0000.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0007.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0009.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0005.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "testing-preferences.backblaze.com": {
             "status_code": 200
+        },
+        "partnerportal.backblaze.com": {
+            "status_code": 302
+        },
+        "tree-sac0-0004.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0002.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0000.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "blog.backblaze.com": {
+            "status_code": 301
         },
         "postman.backblaze.com": {
             "status_code": 200
         },
         "preferences.backblaze.com": {
             "status_code": 200
-        },
-        "blog.backblaze.com": {
-            "status_code": 301
-        },
-        "webflow-prod.backblaze.com": {
-            "status_code": 200
-        },
-        "partnerportal.backblaze.com": {
-            "status_code": 302
-        },
-        "securemail.backblaze.com": {
-            "status_code": 403
-        },
-        "testing-preferences.backblaze.com": {
-            "status_code": 200
         }
     },
     "offline": {
-        "secure.tng.backblaze.com": {
-            "error": "[Errno -2] Name or service not known"
-        },
-        "www.tng.backblaze.com": {
+        "fn.eu.df.backblaze.com": {
             "error": "[Errno -2] Name or service not known"
         },
         "webflow-staging.backblaze.com": {
@@ -62,25 +107,28 @@
         "fn.us.df.backblaze.com": {
             "error": "[Errno -2] Name or service not known"
         },
+        "df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "secure.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
         "www.help.backblaze.com": {
             "error": "[Errno -2] Name or service not known"
         },
         "www.files.backblaze.com": {
             "error": "[Errno -2] Name or service not known"
         },
-        "fn.eu.df.backblaze.com": {
-            "error": "[Errno -2] Name or service not known"
-        },
-        "df.backblaze.com": {
-            "error": "[Errno -2] Name or service not known"
-        },
         "fw-sam0-0000.backblaze.com": {
             "error": ""
         },
-        "files.backblaze.com": {
+        "dataroom.backblaze.com": {
             "error": ""
         },
-        "dataroom.backblaze.com": {
+        "files.backblaze.com": {
             "error": ""
         }
     }

@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-def find_subdomains(domain, output_folder="/workspaces/MY-thesis01/Hamood Thesis/results/subdomains/"):
+def find_subdomains(domain, output_folder="/home/eldiablo/Hamood-thesis/Hamood Thesis/results/subdomains/"):
     # Ensure the output directory exists
     os.makedirs(output_folder, exist_ok=True)
 

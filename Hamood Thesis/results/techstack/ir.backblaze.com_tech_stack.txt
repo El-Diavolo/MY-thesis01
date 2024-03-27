@@ -1,0 +1,12 @@
+
+[+] [1m[34mTECHNOLOGIES [1m[32m[IR.BACKBLAZE.COM] [0m:
+
+Programming languages : PHP [version: nil]
+CDN : Cloudflare [version: nil]
+Font scripts : Google Font API [version: nil]
+JavaScript libraries : jQuery [version: 3.5.1]
+JavaScript libraries : Modernizr [version: nil]
+CMS : Drupal [version: 10]
+Video players : YouTube [version: nil]
+
+

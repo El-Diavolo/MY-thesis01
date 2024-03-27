@@ -1,0 +1,9 @@
+
+[+] [1m[34mTECHNOLOGIES [1m[32m[STATUS.BACKBLAZE.COM] [0m:
+
+JavaScript libraries : jQuery [version: 1.7.1]
+Marketing automation : HubSpot [version: nil]
+Tag managers : Google Tag Manager [version: nil]
+CDN : Cloudflare [version: nil]
+
+

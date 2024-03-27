@@ -1,0 +1,4 @@
+https://secure.backblaze.com/group_user_invite2.htm?action=Gxss&bznetid=FUZZ
+https://secure.backblaze.com/group_user_invite2.htm?action=FUZZ&backblazeAccount=FUZZ&downloadId=FUZZ&email=FUZZ&groupContextParameter=FUZZ&groupId=Gxss&install=FUZZ&status=FUZZ
+https://secure.backblaze.com/group_user_invite2.htm?action=Gxss&backblazeAccount=FUZZ&downloadId=FUZZ&email=FUZZ&groupContextParameter=FUZZ&groupId=FUZZ&install=FUZZ&status=FUZZ
+https://secure.backblaze.com/group_user_invite2.htm?action=FUZZ&backblazeAccount=FUZZ&downloadId=FUZZ&email=FUZZ&groupContextParameter=Gxss&groupId=FUZZ&install=FUZZ&status=FUZZ
