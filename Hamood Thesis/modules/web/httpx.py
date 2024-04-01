@@ -31,7 +31,7 @@ def get_subdomains_from_directory(subdomains_dir='results/subdomains'):
                 subdomains.extend(file.read().splitlines())
     return list(set(subdomains))
 
-def run_httpx(target_domain, results_base_dir='/home/eldiablo/Hamood-thesis/Hamood Thesis/results'):
+def run_httpx(target_domain, results_base_dir='results/subdomains'):
     subdomains = get_subdomains_from_directory(os.path.join(results_base_dir, 'subdomains'))
     results = asyncio.run(run_checks(subdomains))
     

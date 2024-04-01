@@ -1,13 +1,13 @@
 import subprocess
 import os
 
-def find_subdomains(domain, output_folder="/home/eldiablo/Hamood-thesis/Hamood Thesis/results/subdomains/"):
+def find_subdomains(domain, output_folder="results/subdomains/"):
     # Ensure the output directory exists
     os.makedirs(output_folder, exist_ok=True)
 
     print("[*] Starting subdomain enumeration with Sublist3r...")
     sublist3r_output_file = os.path.join(output_folder, f"subdomains_sublist3r_{domain.replace('.', '_')}.txt")
-    command = ["sublist3r", "-d", domain, "-o", sublist3r_output_file]
+    command = ["sudo","sublist3r", "-d", domain, "-o", sublist3r_output_file]
     
     try:
         # Execute Sublist3r silently
