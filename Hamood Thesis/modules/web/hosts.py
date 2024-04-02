@@ -36,8 +36,9 @@ def run_httpx(subdomains_file, results_dir='results/hosts'):
         json.dump(results, json_file, indent=4)
     
     print(f"HTTPx results saved to {results_file_path}")
-
+'''
 if __name__ == "__main__":
     target_domain = "backblaze.com"
     subdomains_file = f'results/subdomains/subdomains_{target_domain.replace(".", "_")}.txt'
     run_httpx(subdomains_file)
+'''
