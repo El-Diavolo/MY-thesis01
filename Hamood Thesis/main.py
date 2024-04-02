@@ -31,7 +31,7 @@ def main(target_domain):
         ('Scan Common Ports', scan_common_ports, (target_domain,)),
         ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (api_key, target_domain)),
-        ('gospider' , run_gospider, (target_domain,))
+        #('gospider' , run_gospider, (target_domain,))
     ]
 
     # Phase 2: Single task execution

@@ -1,0 +1,63 @@
+{
+    "online": {
+        "www.backblaze.com": {
+            "status_code": 200
+        },
+        "blog.backblaze.com": {
+            "status_code": 301
+        },
+        "help.backblaze.com": {
+            "status_code": 302
+        },
+        "hub.backblaze.com": {
+            "status_code": 301
+        },
+        "info.backblaze.com": {
+            "status_code": 301
+        },
+        "preferences.backblaze.com": {
+            "status_code": 200
+        },
+        "secure.backblaze.com": {
+            "status_code": 301
+        },
+        "status.backblaze.com": {
+            "status_code": 200
+        },
+        "testing-preferences.backblaze.com": {
+            "status_code": 200
+        },
+        "trynow.backblaze.com": {
+            "status_code": 302
+        },
+        "webflow-prod.backblaze.com": {
+            "status_code": 200
+        }
+    },
+    "offline": {
+        "dataroom.backblaze.com": {
+            "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        "files.backblaze.com": {
+            "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        "www.files.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "fw-sam0-0000.backblaze.com": {
+            "error": "_ssl.c:989: The handshake operation timed out"
+        },
+        "www.help.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "secure.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "webflow-staging.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        }
+    }
+}

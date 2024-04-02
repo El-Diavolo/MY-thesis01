@@ -6,7 +6,7 @@ def find_subdomains(domain, output_folder="results/subdomains/"):
     os.makedirs(output_folder, exist_ok=True)
 
     print("[*] Starting subdomain enumeration with Sublist3r...")
-    sublist3r_output_file = os.path.join(output_folder, f"subdomains_sublist3r_{domain.replace('.', '_')}.txt")
+    sublist3r_output_file = os.path.join(output_folder, f"subdomains_{domain.replace('.', '_')}.txt")
     command = ["sudo","sublist3r", "-d", domain, "-o", sublist3r_output_file]
     
     try:
@@ -30,5 +30,4 @@ def find_subdomains(domain, output_folder="results/subdomains/"):
     except subprocess.CalledProcessError as e:
         print(f"Error running Sublist3r: {e}")
         return []
-
 
