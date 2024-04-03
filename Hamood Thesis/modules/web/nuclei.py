@@ -15,10 +15,7 @@ def run_single_nuclei_scan(host, output_file):
         print(f"[-] Error running Nuclei on {host}: {e}")
 
 def run_nuclei_scan(hosts_dir='results/hosts', output_dir='results/nuclei', threads=1000):
-    """
-    Function to run Nuclei scans concurrently on multiple hosts.
-    """
-    os.makedirs(output_dir, exist_ok=True)  # Ensure the output directory exists
+    os.makedirs(output_dir, exist_ok=True)  
 
     with ThreadPoolExecutor(max_workers=threads) as executor:
         futures = []

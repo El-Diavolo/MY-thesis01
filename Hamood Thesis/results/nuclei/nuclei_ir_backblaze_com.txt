@@ -1,0 +1,24 @@
+[caa-fingerprint] [dns] [info] ir.backblaze.com
+[options-method] [http] [info] https://ir.backblaze.com [GET, POST]
+[addeventlistener-detect] [http] [info] https://ir.backblaze.com
+[xss-deprecated-header] [http] [info] https://ir.backblaze.com [1; mode=block]
+[metatag-cms] [http] [info] https://ir.backblaze.com [Drupal 10 (https://www.drupal.org)]
+[tech-detect:youtube] [http] [info] https://ir.backblaze.com
+[tech-detect:google-font-api] [http] [info] https://ir.backblaze.com
+[tech-detect:drupal] [http] [info] https://ir.backblaze.com
+[tech-detect:cloudflare] [http] [info] https://ir.backblaze.com
+[drupal-login] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:clear-site-data] [http] [info] https://ir.backblaze.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://ir.backblaze.com
+[robots-txt] [http] [info] https://ir.backblaze.com/robots.txt
+[robots-txt-endpoint] [http] [info] https://ir.backblaze.com/robots.txt
+[missing-sri] [http] [info] https://ir.backblaze.com/ [https://code.jquery.com/jquery-3.5.1.min.js,//assets.adobedtm.com/898335afd880/c52ee8aa1e90/launch-5ef258dce664.min.js]
+[waf-detect:cloudflare] [http] [info] https://ir.backblaze.com/
+[ssl-issuer] [ssl] [info] ir.backblaze.com:443 [Google Trust Services LLC]
+[ssl-dns-names] [ssl] [info] ir.backblaze.com:443 [backblaze.com,*.backblaze.com]
+[wildcard-tls] [ssl] [info] ir.backblaze.com:443 [CN: backblaze.com,SAN: [backblaze.com *.backblaze.com]]

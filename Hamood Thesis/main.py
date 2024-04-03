@@ -2,7 +2,7 @@ import sys
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Assuming these functions are defined in the imported modules
+
 from modules.web import (
     find_subdomains,
     read_subdomains_and_run_ffuf,
@@ -19,6 +19,7 @@ from modules.network import scan_common_ports
 wordlist_path = 'test/testwordlist.txt'
 hosts_path = "results/hosts"
 results_dir = "results/directories"
+subdomains_dir = 'results/subdomains'
 
 # API keys
 api_key = 'rzmg0Qy3yK0Cuh6AJXiUtEzQaaByNdtY'
@@ -31,18 +32,17 @@ def main(target_domain):
         ('Scan Common Ports', scan_common_ports, (target_domain,)),
         ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (api_key, target_domain)),
-        #('gospider' , run_gospider, (target_domain,))
+        ('gospider' , run_gospider, (target_domain,))
     ]
 
-    # Phase 2: Single task execution
-    httpx_task = ('Run HTTPx', run_httpx, (target_domain,))
+    
+    httpx_task = ('Run HTTPx', run_httpx, (subdomains_dir,))
 
     # Phase 3: Concurrent execution of additional tasks
     additional_tasks = [
         ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
         ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
         #('Running Screenshotter', run_eyewitness, ('results/subdomains', 'results/screenshots')),
-        # Uncomment the following line if `run_nuclei_scan` is to be included
         #('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei'))
     ]
 

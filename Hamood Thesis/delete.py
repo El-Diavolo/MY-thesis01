@@ -18,7 +18,7 @@ def delete_files_in_directories(directory):
                 except Exception as e:
                     print(f'Failed to delete {file_path}. Reason: {e}')
         elif os.path.isfile(item_path):
-            # If you also want to delete files directly in the 'results' directory, uncomment the next line
+            #to delete files directly in the 'results' directory, uncomment the next line
             # os.unlink(item_path)
             pass
 

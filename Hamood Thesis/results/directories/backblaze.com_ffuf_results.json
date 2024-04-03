@@ -1,1 +1,109 @@
-{}
+{
+    "blog.backblaze.com": [
+        {
+            "url": "http://blog.backblaze.com/index",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "index"
+        },
+        {
+            "url": "http://blog.backblaze.com/magazine",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "magazine"
+        },
+        {
+            "url": "http://blog.backblaze.com/main",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "main"
+        },
+        {
+            "url": "http://blog.backblaze.com/contact",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "contact"
+        },
+        {
+            "url": "http://blog.backblaze.com/culture",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "culture"
+        },
+        {
+            "url": "http://blog.backblaze.com/cart",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "cart"
+        },
+        {
+            "url": "http://blog.backblaze.com/partners",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "partners"
+        },
+        {
+            "url": "http://blog.backblaze.com/hello",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "hello"
+        },
+        {
+            "url": "http://blog.backblaze.com/test",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "test"
+        },
+        {
+            "url": "http://blog.backblaze.com/shop",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "shop"
+        },
+        {
+            "url": "http://blog.backblaze.com/profile",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "profile"
+        },
+        {
+            "url": "http://blog.backblaze.com/admin",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "admin"
+        }
+    ],
+    "hub.backblaze.com": [],
+    "info.backblaze.com": [],
+    "ir.backblaze.com": [],
+    "postman.backblaze.com": [],
+    "preferences.backblaze.com": [],
+    "secure.backblaze.com": [],
+    "status.backblaze.com": [],
+    "testing-preferences.backblaze.com": [],
+    "tree-ams5-0000.secure.backblaze.com": [],
+    "tree-ams5-0001.secure.backblaze.com": [],
+    "tree-ams5-0002.secure.backblaze.com": [],
+    "tree-phx1-0001.secure.backblaze.com": [],
+    "tree-phx1-0002.secure.backblaze.com": [],
+    "tree-sac0-0000.secure.backblaze.com": [],
+    "tree-sac0-0001.secure.backblaze.com": [],
+    "tree-sac0-0002.secure.backblaze.com": [],
+    "tree-sac0-0003.secure.backblaze.com": [],
+    "tree-sac0-0004.secure.backblaze.com": [],
+    "tree-sac0-0005.secure.backblaze.com": [],
+    "tree-sac0-0006.secure.backblaze.com": [],
+    "tree-sac0-0007.secure.backblaze.com": [],
+    "tree-sac0-0008.secure.backblaze.com": [],
+    "tree-sac0-0009.secure.backblaze.com": [],
+    "try.backblaze.com": [],
+    "webflow-prod.backblaze.com": [],
+    "www.backblaze.com": [
+        {
+            "url": "http://www.backblaze.com/partners",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "partners"
+        }
+    ]
+}

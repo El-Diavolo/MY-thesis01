@@ -47,10 +47,7 @@ def compile_tech_stacks_to_json(output_dir):
     print(f"Compiled tech stack detection results saved to {compiled_results_file}")
 
 def parse_wappy_output_to_json(text_output):
-    """
-    Parses wappy's plain text output into a JSON-compatible dictionary.
-    Assumes each line of the output is in the format "Technology: Detail [version: Version]".
-    """
+
     tech_stack = {}
     for line in text_output.splitlines():
         match = re.match(r"^(.+?)\s*:\s*(.+?)\s*\[version:\s*(.*?)\]$", line)

@@ -1,0 +1,12 @@
+[caa-fingerprint] [dns] [info] status.backblaze.com
+[dns-saas-service-detection:hubspot] [dns] [info] status.backblaze.com [2832298.group48.sites.hubspot.net]
+[google-floc-disabled] [http] [info] https://status.backblaze.com
+[tech-detect:cloudflare] [http] [info] https://status.backblaze.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://status.backblaze.com
+[http-missing-security-headers:clear-site-data] [http] [info] https://status.backblaze.com
+[http-missing-security-headers:strict-transport-security] [http] [info] https://status.backblaze.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://status.backblaze.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://status.backblaze.com
+[waf-detect:cloudflare] [http] [info] https://status.backblaze.com/
+[ssl-issuer] [ssl] [info] status.backblaze.com:443 [Google Trust Services LLC]
+[ssl-dns-names] [ssl] [info] status.backblaze.com:443 [status.backblaze.com]

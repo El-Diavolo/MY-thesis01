@@ -3,20 +3,14 @@ import os
 
 def run_eyewitness(subdomains_dir = 'results/subdomains', output_dir='results/screenshots'):
     
-    """
-    Takes screenshots of domains listed in files within the subdomains_dir using EyeWitness,
-    attempting to use subprocess and echo to handle prompts.
-    """
-    # Ensure the output directory exists
+
     os.makedirs(output_dir, exist_ok=True)
 
-    # Iterate over each file in the subdomains directory
     for filename in os.listdir(subdomains_dir):
         if filename.endswith('.txt'):
             filepath = os.path.join(subdomains_dir, filename)
             print(f"Taking screenshots for: {filepath}")
 
-            # Construct the EyeWitness command
             command = f"eyewitness --web -f {filepath} --timeout 100 -d {output_dir} --no-prompt"
             
 

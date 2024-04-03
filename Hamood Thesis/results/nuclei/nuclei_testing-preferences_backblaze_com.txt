@@ -1,0 +1,15 @@
+[dns-saas-service-detection:datagrail] [dns] [info] testing-preferences.backblaze.com [backblazetesting.datagrail.io]
+[caa-fingerprint] [dns] [info] testing-preferences.backblaze.com [amazonaws.com]
+[xss-deprecated-header] [http] [info] https://testing-preferences.backblaze.com [1; mode=block]
+[aws-cloudfront-service] [http] [info] https://testing-preferences.backblaze.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://testing-preferences.backblaze.com
+[http-missing-security-headers:clear-site-data] [http] [info] https://testing-preferences.backblaze.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://testing-preferences.backblaze.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://testing-preferences.backblaze.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://testing-preferences.backblaze.com
+[aws-detect:aws-cloudfront] [http] [info] https://testing-preferences.backblaze.com
+[robots-txt-endpoint] [http] [info] https://testing-preferences.backblaze.com/robots.txt
+[waf-detect:cloudfront] [http] [info] https://testing-preferences.backblaze.com/
+[waf-detect:nginxgeneric] [http] [info] https://testing-preferences.backblaze.com/
+[ssl-issuer] [ssl] [info] testing-preferences.backblaze.com:443 [Amazon]
+[ssl-dns-names] [ssl] [info] testing-preferences.backblaze.com:443 [testing-preferences.backblaze.com,backblazetesting.datagrail.io]

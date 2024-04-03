@@ -1,0 +1,132 @@
+{
+    "online": {
+        "ir.backblaze.com": {
+            "status_code": 200
+        },
+        "testing-preferences.backblaze.com": {
+            "status_code": 200
+        },
+        "securemail.backblaze.com": {
+            "status_code": 403
+        },
+        "webflow-prod.backblaze.com": {
+            "status_code": 200
+        },
+        "secure.backblaze.com": {
+            "status_code": 301
+        },
+        "hub.backblaze.com": {
+            "status_code": 301
+        },
+        "info.backblaze.com": {
+            "status_code": 301
+        },
+        "trynow.backblaze.com": {
+            "status_code": 302
+        },
+        "status.backblaze.com": {
+            "status_code": 200
+        },
+        "help.backblaze.com": {
+            "status_code": 302
+        },
+        "tree-ams5-0000.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-ams5-0001.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-ams5-0002.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "www.backblaze.com": {
+            "status_code": 200
+        },
+        "try.backblaze.com": {
+            "status_code": 200
+        },
+        "blog.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-phx1-0002.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-phx1-0001.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0001.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0000.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0002.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0004.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "postman.backblaze.com": {
+            "status_code": 200
+        },
+        "tree-sac0-0005.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0003.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0008.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0006.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0007.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "tree-sac0-0009.secure.backblaze.com": {
+            "status_code": 301
+        },
+        "preferences.backblaze.com": {
+            "status_code": 200
+        },
+        "partnerportal.backblaze.com": {
+            "status_code": 302
+        }
+    },
+    "offline": {
+        "df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "fn.eu.df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.files.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.help.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "fn.us.df.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "www.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "secure.tng.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "webflow-staging.backblaze.com": {
+            "error": "[Errno -2] Name or service not known"
+        },
+        "dataroom.backblaze.com": {
+            "error": ""
+        },
+        "files.backblaze.com": {
+            "error": ""
+        },
+        "fw-sam0-0000.backblaze.com": {
+            "error": ""
+        }
+    }
+}

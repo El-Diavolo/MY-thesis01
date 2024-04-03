@@ -19,7 +19,6 @@ secure.backblaze.com
 tree-ams5-0000.secure.backblaze.com
 tree-ams5-0001.secure.backblaze.com
 tree-ams5-0002.secure.backblaze.com
-tree-phx1-0000.secure.backblaze.com
 tree-phx1-0001.secure.backblaze.com
 tree-phx1-0002.secure.backblaze.com
 tree-sac0-0000.secure.backblaze.com
