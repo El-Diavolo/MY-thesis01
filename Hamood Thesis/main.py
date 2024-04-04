@@ -22,7 +22,9 @@ results_dir = "results/directories"
 subdomains_dir = 'results/subdomains'
 
 # API keys
-api_key = 'rzmg0Qy3yK0Cuh6AJXiUtEzQaaByNdtY'
+from dotenv import load_dotenv
+load_dotenv()
+SHODAN_API_TOKEN = os.getenv("SHODAN_API_TOKEN")
 
 def main(target_domain):
     print(f'Starting scans for: {target_domain}')
@@ -31,7 +33,7 @@ def main(target_domain):
     initial_tasks = [
         ('Scan Common Ports', scan_common_ports, (target_domain,)),
         ('Find Subdomains', find_subdomains, (target_domain,)),
-        ('Shodan Search', shodan_search, (api_key, target_domain)),
+        ('Shodan Search', shodan_search, (SHODAN_API_TOKEN, target_domain)),
         ('gospider' , run_gospider, (target_domain,))
     ]
 
