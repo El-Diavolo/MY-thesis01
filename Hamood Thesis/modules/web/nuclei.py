@@ -7,7 +7,7 @@ def run_single_nuclei_scan(host, output_file):
     """
     Function to run a Nuclei scan on a single host and save the output to a file.
     """
-    command = ["nuclei", "-u", host, "-o", output_file]
+    command = ["nuclei","-as", "-u", host, "-o", output_file]
     try:
         subprocess.run(command, check=True , stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
         print(f"[+] Nuclei scan completed for {host}. Results saved to {output_file}")

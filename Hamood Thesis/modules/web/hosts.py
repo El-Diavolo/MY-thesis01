@@ -12,13 +12,17 @@ async def check_subdomain(client, subdomain, results):
         print(f"Error checking {subdomain}: {e}")
         results['offline'][subdomain] = {'error': str(e)}
 
-async def run_checks(subdomains):
+async def run_checks(subdomains, batch_size=100):
     results = {'online': {}, 'offline': {}}
-    timeout = 10.0  
-    async with httpx.AsyncClient(timeout=timeout) as client:
-        tasks = [check_subdomain(client, subdomain, results) for subdomain in subdomains]
-        await asyncio.gather(*tasks)
+    timeout = 10.0
+    
+    for i in range(0, len(subdomains), batch_size):
+        batch = subdomains[i:i + batch_size]
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            tasks = [check_subdomain(client, subdomain, results) for subdomain in batch]
+            await asyncio.gather(*tasks)
     return results
+
 
 def get_subdomains_from_directory(subdomains_dir):
     all_subdomains = []
@@ -43,3 +47,7 @@ def run_httpx(subdomains_dir, results_dir='results/hosts'):
         json.dump(results, json_file, indent=4)
     
     print(f"HTTPx results saved to {results_file_path}")
+
+if __name__ == "__main__":
+    domain = "results/subdomains"
+    run_httpx(domain)

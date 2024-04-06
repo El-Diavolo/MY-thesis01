@@ -1,7 +1,0 @@
-[caa-fingerprint] [dns] [info] blog.backblaze.com
-[dns-saas-service-detection] [dns] [info] blog.backblaze.com [www.backblaze.com]
-[missing-sri] [http] [info] https://www.backblaze.com/blog/ [https://cdn.cookielaw.org/scripttemplates/otSDKStub.js,https://cdn.schemaapp.com/javascript/highlight.js,https://f001.backblazeb2.com/file/backblaze-com-assets/headerAndFooter/HeaderPrimary.js,https://f001.backblazeb2.com/file/backblaze-com-assets/headerAndFooter/FooterLight.js,//js.hs-scripts.com/2832298.js,//js.hsforms.net/forms/embed/v2.js,https://js.hs-scripts.com/2832298.js?integration=WordPress&ver=11.0.32]
-[wordpress-detect:version_by_js] [http] [info] https://www.backblaze.com/blog/ [6.4.3]
-[ssl-issuer] [ssl] [info] blog.backblaze.com:443 [Let's Encrypt]
-[ssl-dns-names] [ssl] [info] blog.backblaze.com:443 [*.secure.backblaze.com,backblaze.com,*.backblaze.com]
-[wildcard-tls] [ssl] [info] blog.backblaze.com:443 [CN: backblaze.com,SAN: [*.backblaze.com *.secure.backblaze.com backblaze.com]]
