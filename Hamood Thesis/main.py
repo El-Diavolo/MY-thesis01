@@ -36,11 +36,14 @@ def main(target_domain):
         ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (SHODAN_API_TOKEN, target_domain)),
         #('gospider' , run_gospider, (target_domain,)),
-        ('katana' , run_katana, ())
+        
     ]
 
     
-    httpx_task = ('Run HTTPx', run_httpx, (subdomains_dir,))
+    httpx_task = [
+                ('Run HTTPx', run_httpx, (subdomains_dir,)),
+                ('katana' , run_katana, ())
+    ]
 
     # Phase 3: Concurrent execution of additional tasks
     additional_tasks = [
@@ -52,7 +55,7 @@ def main(target_domain):
 
     # Execute tasks
     execute_tasks(initial_tasks, "Phase 1: Initial Tasks")
-    execute_tasks([httpx_task], "Phase 2: HTTPx Task")
+    execute_tasks(httpx_task, "Phase 2: HTTPx Task")
     #execute_tasks(additional_tasks, "Phase 3: Additional Tasks")
 
 def execute_tasks(tasks, phase_description):
