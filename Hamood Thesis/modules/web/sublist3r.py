@@ -57,12 +57,15 @@ def find_subdomains(domain, output_folder="results/subdomains/"):
     print(f"[+] Combined unique subdomains: {len(subdomains)}")
     print(f"[+] Combined unique subdomains saved to {combined_output_file}")
 
-    # Delete Sublist3r and Subfinder output files
-    os.remove(sublist3r_output_file)
-    os.remove(subfinder_output_file)
+    # Delete Sublist3r and Subfinder output files if they exist
+    if os.path.exists(sublist3r_output_file):
+        os.remove(sublist3r_output_file)
+    if os.path.exists(subfinder_output_file):
+        os.remove(subfinder_output_file)
     print("[+] Temporary files deleted.")
 
     return list(subdomains)
+
 if __name__ == "__main__":
     domain = "backblaze.com"
     find_subdomains(domain)

@@ -8,7 +8,7 @@ def run_gospider(domain, output_dir="results/gospider"):
     output_file = os.path.join(output_dir, f"{domain.replace('.', '_')}_gospider.json")
     
     # Run GoSpider
-    command = ["gospider", "-s", f"https://{domain}","-c","10", "-o", output_dir, "-u", "web:hello"]
+    command = ["gospider", "-s", f"http://{domain}","-c","10", "-o", output_dir, "-u", "web:hello"]
     subprocess.run(command, capture_output=True, text=True)
 
     # Compile regex for matching URLs with parameters and API endpoints
