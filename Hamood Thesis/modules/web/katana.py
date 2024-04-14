@@ -6,7 +6,7 @@ def run_katana_on_domain(target_domain, output_dir="results/katana"):
     os.makedirs(output_dir, exist_ok=True)
 
     # Create a specific directory for the target domain to store results
-    domain_output_dir = os.path.join(output_dir, f"katana_{target_domain.replace(':', '_').replace('/', '_')}.txt")
+    domain_output_dir = os.path.join(output_dir, f"katana_{target_domain.replace('.', '_').replace('/', '_')}.txt")
     os.makedirs(domain_output_dir, exist_ok=True)
 
     # Define URLs with HTTP and HTTPS protocols
