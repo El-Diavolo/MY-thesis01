@@ -1,9 +1,0 @@
-rich
-configparser
-python-dotenv
-shodan
-python-nmap
-xmltodict
-httpx
-asyncio 
-python-Wappalyzer
