@@ -9,3 +9,4 @@ from .screenshotter import *
 from .gospider import *
 from .katana import *
 from .xss import *
+from .lfi import *

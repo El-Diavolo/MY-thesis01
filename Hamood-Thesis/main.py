@@ -13,7 +13,8 @@ from modules.web import (
     run_eyewitness,
     run_gospider,
     run_katana,
-    run_xss
+    run_xss,
+    lfi_scan
 )
 from modules.network import scan_common_ports
 
@@ -22,6 +23,9 @@ wordlist_path = 'test/testwordlist.txt'
 hosts_path = "results/hosts"
 results_dir = "results/directories"
 subdomains_dir = 'results/subdomains'
+katana_dir = "results/katana"  # Directory where Katana outputs are stored
+lfi_dir = "results/lfi"
+payloads_lfi = "/opt/smalllfi.txt"
 
 # API keys
 from dotenv import load_dotenv
@@ -43,7 +47,7 @@ def main(target_domain):
     
     httpx_task = [
                 ('Run HTTPx', run_httpx, (subdomains_dir,)),
-                ('katana' , run_katana, (target_domain,))
+                ('katana' , run_katana, (target_domain, katana_dir))
     ]
 
     # Phase 3: Concurrent execution of additional tasks
@@ -52,13 +56,14 @@ def main(target_domain):
         #('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
         #('Running Screenshotter', run_eyewitness, ('results/subdomains', 'results/screenshots')),
         #('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei')),
-        ('Run Xss Scsan' , run_xss, (target_domain,))
+       #('Run Xss Scsan' , run_xss, (target_domain,)),
+        ('Run LFI Scsan' , lfi_scan, (katana_dir, lfi_dir , payloads_lfi,))
 
     ]
 
     # Execute tasks
     #execute_tasks(initial_tasks, "Phase 1: Initial Tasks")
-    #execute_tasks(httpx_task, "Phase 2: HTTPx Task")
+    execute_tasks(httpx_task, "Phase 2: HTTPx Task")
     execute_tasks(additional_tasks, "Phase 3: Additional Tasks")
 
 def execute_tasks(tasks, phase_description):
