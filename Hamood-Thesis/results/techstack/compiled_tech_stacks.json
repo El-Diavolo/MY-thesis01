@@ -1,0 +1,28 @@
+{
+    "testphp.vulnweb.com": {
+        "Operating systems": [
+            {
+                "detail": "Ubuntu",
+                "version": "nil"
+            }
+        ],
+        "Programming languages": [
+            {
+                "detail": "PHP",
+                "version": "5.6.40"
+            }
+        ],
+        "Editors": [
+            {
+                "detail": "DreamWeaver",
+                "version": "nil"
+            }
+        ],
+        "Web servers": [
+            {
+                "detail": "Nginx",
+                "version": "1.19.0"
+            }
+        ]
+    }
+}

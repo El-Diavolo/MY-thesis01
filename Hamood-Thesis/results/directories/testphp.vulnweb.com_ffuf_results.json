@@ -1,0 +1,10 @@
+{
+    "testphp.vulnweb.com": [
+        {
+            "url": "http://testphp.vulnweb.com/admin",
+            "status": 200,
+            "redirectlocation": "",
+            "FUZZ": "admin"
+        }
+    ]
+}

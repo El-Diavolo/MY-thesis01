@@ -1,4 +1,8 @@
 {
-    "online": {},
+    "online": {
+        "testphp.vulnweb.com": {
+            "status_code": 200
+        }
+    },
     "offline": {}
 }

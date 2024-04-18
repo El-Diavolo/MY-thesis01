@@ -23,9 +23,10 @@ wordlist_path = 'test/testwordlist.txt'
 hosts_path = "results/hosts"
 results_dir = "results/directories"
 subdomains_dir = 'results/subdomains'
-katana_dir = "results/katana"  # Directory where Katana outputs are stored
-lfi_dir = "results/lfi"
+katana_dir = "/mnt/d/MY-thesis01/Hamood-Thesis/results/katana"
+lfi_dir = "/mnt/d/MY-thesis01/Hamood-Thesis/results/lfi"
 payloads_lfi = "/opt/smalllfi.txt"
+xss_dir = "results/xss"
 
 # API keys
 from dotenv import load_dotenv
@@ -36,35 +37,46 @@ def main(target_domain):
     print(f'Starting scans for: {target_domain}')
 
     # Phase 1: Concurrent execution of initial tasks
-    initial_tasks = [
-        ('Scan Common Ports', scan_common_ports, (target_domain,)),
+    Phase_1 = [
+        #('Scan Common Ports', scan_common_ports, (target_domain,)),
         ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (SHODAN_API_TOKEN, target_domain)),
         #('gospider' , run_gospider, (target_domain,)),
         
+        
     ]
 
     
-    httpx_task = [
+    Phase_2 = [
                 ('Run HTTPx', run_httpx, (subdomains_dir,)),
                 ('katana' , run_katana, (target_domain, katana_dir))
+                
     ]
 
     # Phase 3: Concurrent execution of additional tasks
-    additional_tasks = [
-        #('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
-        #('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
+    Phase_3 = [
+        ('Read Subdomains and Run FFUF', read_subdomains_and_run_ffuf, (target_domain, hosts_path, wordlist_path, 'results/directories')),
+        ('Run Tech Stack Detection', run_tech_stack_detection, (hosts_path, 'results/techstack')),
         #('Running Screenshotter', run_eyewitness, ('results/subdomains', 'results/screenshots')),
         #('Run Nuclei Scan', run_nuclei_scan, (hosts_path, 'results/nuclei')),
-       #('Run Xss Scsan' , run_xss, (target_domain,)),
-        ('Run LFI Scsan' , lfi_scan, (katana_dir, lfi_dir , payloads_lfi,))
+        
+    ]
 
+
+    Phase_4 = [
+        ('Run LFI Scsan' , lfi_scan, (katana_dir, lfi_dir , payloads_lfi,)),
+    ]
+    
+    Phase_5 = [
+        ('Run Xss Scsan' , run_xss, ()),
     ]
 
     # Execute tasks
-    #execute_tasks(initial_tasks, "Phase 1: Initial Tasks")
-    execute_tasks(httpx_task, "Phase 2: HTTPx Task")
-    execute_tasks(additional_tasks, "Phase 3: Additional Tasks")
+    execute_tasks(Phase_1, "Phase 1: Initial Tasks")
+    execute_tasks(Phase_2, "Phase 2: HTTPx Task")
+    execute_tasks(Phase_3, "Phase 3: crawling")
+    execute_tasks(Phase_4, "Phase 4: LFI tests")
+    execute_tasks(Phase_5, "Phase 5: Xss tests")
 
 def execute_tasks(tasks, phase_description):
     total_tasks = len(tasks)
