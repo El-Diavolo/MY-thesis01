@@ -15,7 +15,7 @@ def run_katana(target_domain, output_dir="results/katana"):
     except subprocess.CalledProcessError as e:
         print(f"Katana failed for {url}: {str(e)}")
 
-def run_gau(target_domain, output_dir="results/gau"):
+def run_gau(target_domain, output_dir="results/katana"):
     os.makedirs(output_dir, exist_ok=True)
     output_file_path = os.path.join(output_dir, "gau_results.txt")
 
@@ -40,8 +40,8 @@ def deduplicate_urls(katana_file, gau_file, output_file):
 if __name__ == "__main__":
     target_domain = input("Enter the target domain (e.g., example.com): ")
     katana_output = "results/katana/katana_results.txt"
-    gau_output = "results/katana/gau.txt"
-    final_output = "results/katana/finalresut.txt"
+    gau_output = "results/katana/gau_results.txt"
+    final_output = "results/katana/final_deduplicated_urls.txt"
 
     run_katana(target_domain)
     run_gau(target_domain)
