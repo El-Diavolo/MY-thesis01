@@ -14,7 +14,8 @@ from modules.web import (
     run_gospider,
     run_katana,
     run_xss,
-    lfi_scan
+    lfi_scan,
+    sqli_scan
 )
 from modules.network import scan_common_ports
 
@@ -27,6 +28,7 @@ katana_dir = "/mnt/d/MY-thesis01/Hamood-Thesis/results/katana"
 lfi_dir = "/mnt/d/MY-thesis01/Hamood-Thesis/results/lfi"
 payloads_lfi = "/opt/smalllfi.txt"
 xss_dir = "results/xss"
+sqli_dir = "results/sqli"
 
 # API keys
 from dotenv import load_dotenv
@@ -71,12 +73,18 @@ def main(target_domain):
         ('Run Xss Scsan' , run_xss, ()),
     ]
 
+    Phase_6 = [
+        ('Run SQLI Scan' , sqli_scan, (katana_dir,sqli_dir)),
+    ]
+
     # Execute tasks
-    execute_tasks(Phase_1, "Phase 1: Initial Tasks")
+    #execute_tasks(Phase_1, "Phase 1: Initial Tasks")
     execute_tasks(Phase_2, "Phase 2: HTTPx Task")
     execute_tasks(Phase_3, "Phase 3: crawling")
-    execute_tasks(Phase_4, "Phase 4: LFI tests")
-    execute_tasks(Phase_5, "Phase 5: Xss tests")
+    #execute_tasks(Phase_4, "Phase 4: LFI tests")
+    #execute_tasks(Phase_5, "Phase 5: Xss tests")
+    execute_tasks(Phase_6, "Phase 5: SQLI tests")
+
 
 def execute_tasks(tasks, phase_description):
     total_tasks = len(tasks)

