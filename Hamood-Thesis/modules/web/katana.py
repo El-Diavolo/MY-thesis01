@@ -36,7 +36,7 @@ def deduplicate_urls(katana_file, gau_file, output_file):
     except subprocess.CalledProcessError as e:
         print(f"Failed to deduplicate URLs: {str(e)}")
 
-def run_scan(target_domain):
+def run_katana(target_domain):
     output_dir = "results/katana"
     setup_environment(output_dir)
 
@@ -46,6 +46,11 @@ def run_scan(target_domain):
 
     deduplicate_urls(katana_output, gau_output, final_output)
 
+    # Remove the intermediate files after deduplication
+    os.remove(katana_output)
+    os.remove(gau_output)
+    print(f"Intermediate files removed, final deduplicated file kept at {final_output}")
+
 if __name__ == "__main__":
     target_domain = "testphp.vulnweb.com"
-    run_scan(target_domain)
+    run_katana(target_domain)

@@ -45,13 +45,15 @@ def replace_fuzz(lfi_file):
         urls = file.read().splitlines()
 
     for url in urls:
-        if '=' in url:
+        # Check if URL contains a query string
+        if '?' in url:
             base_url, query_string = url.split('?', 1)
             params = query_string.split('&')
-            modified_params = [f"{param.split('=')[0]}=FUZZ" for param in params]
+            modified_params = [f"{param.split('=')[0]}=FUZZ" for param in params if '=' in param]
             new_url = f"{base_url}?{'&'.join(modified_params)}"
             updated_urls.add(new_url)
         else:
+            # If there's no query string, just append "FUZZ" to the URL
             updated_urls.add(url + "FUZZ")
 
     with open(lfi_file, 'w') as file:
@@ -71,21 +73,41 @@ def run_ffuf(lfi_file, payloads_file):
         urls = file.read().splitlines()
 
     for url in urls:
-        command = ["ffuf", "-u", url, "-mr", "root:x", "-w", payloads_file, "-r"]
+        logger.info(f"Running FFUF on URL: {url}")
+        print(f"Running FFUF on URL: {url}")
+
+        command = ["ffuf", "-u", url, "-mr", "root:x", "-w", payloads_file, "-r", "-rate", "10"]  # Set lower rate for requests
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        
-        for line in iter(process.stdout.readline, ''):
-            print(line, end='')  # Printing FFUF output in real time
-            cleaned_line = clean_ansi_sequences(line)
-            if "[Status: 200" in cleaned_line:
-                path = cleaned_line.split(' ')[0]
-                if "200" in cleaned_line:
-                    results.append({
-                        "url": url.replace("FUZZ", path),
-                        "response_status": "200",
-                        "payload": path
-                    })
-                    logger.info(f"LFI detected at: {url} with payload {path}")
+
+        try:
+            # Adjust the timeout based on typical response time expectations
+            stdout, stderr = process.communicate(timeout=60)  # Timeout set to 60 seconds
+
+            for line in stdout.splitlines():
+                cleaned_line = clean_ansi_sequences(line)
+                if "[Status: 200" in cleaned_line:
+                    path = cleaned_line.split(' ')[0]
+                    if "200" in cleaned_line:
+                        results.append({
+                            "url": url.replace("FUZZ", path),
+                            "response_status": "200",
+                            "payload": path
+                        })
+                        logger.info(f"LFI detected at: {url} with payload {path}")
+        except subprocess.TimeoutExpired:
+            logger.warning(f"FFUF command for URL {url} timed out. This URL may be rate-limited or too slow.")
+            process.kill()
+            process.wait()  # Ensure the process is cleaned up before continuing
+        except Exception as e:
+            logger.error(f"An error occurred while running FFUF: {str(e)}")
+        finally:
+            if process.poll() is None:  # Check if the process is still running
+                process.terminate()
+                try:
+                    process.wait(timeout=5)  # Wait for process to terminate
+                except subprocess.TimeoutExpired:
+                    logger.warning(f"Process for URL {url} could not be terminated properly and was killed.")
+                    process.kill()
 
     return results
 

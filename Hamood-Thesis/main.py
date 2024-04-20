@@ -15,7 +15,7 @@ from modules.web import (
     run_katana,
     run_xss,
     lfi_scan,
-    sqli_scan
+    run_sqli
 )
 from modules.network import scan_common_ports
 
@@ -40,7 +40,7 @@ def main(target_domain):
 
     # Phase 1: Concurrent execution of initial tasks
     Phase_1 = [
-        #('Scan Common Ports', scan_common_ports, (target_domain,)),
+        ('Scan Common Ports', scan_common_ports, (target_domain,)),
         ('Find Subdomains', find_subdomains, (target_domain,)),
         ('Shodan Search', shodan_search, (SHODAN_API_TOKEN, target_domain)),
         #('gospider' , run_gospider, (target_domain,)),
@@ -74,15 +74,15 @@ def main(target_domain):
     ]
 
     Phase_6 = [
-        ('Run SQLI Scan' , sqli_scan, (katana_dir,sqli_dir)),
+        ('Run SQLI Scan' , run_sqli, (katana_dir,sqli_dir)),
     ]
 
     # Execute tasks
-    #execute_tasks(Phase_1, "Phase 1: Initial Tasks")
+    execute_tasks(Phase_1, "Phase 1: Initial Tasks")
     execute_tasks(Phase_2, "Phase 2: HTTPx Task")
     execute_tasks(Phase_3, "Phase 3: crawling")
-    #execute_tasks(Phase_4, "Phase 4: LFI tests")
-    #execute_tasks(Phase_5, "Phase 5: Xss tests")
+    execute_tasks(Phase_4, "Phase 4: LFI tests")
+    execute_tasks(Phase_5, "Phase 5: Xss tests")
     execute_tasks(Phase_6, "Phase 5: SQLI tests")
 
 
