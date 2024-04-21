@@ -1,30 +1,4 @@
 {
     "host": "testphp.vulnweb.com",
-    "open_ports": [
-        {
-            "port": "25",
-            "protocol": "tcp",
-            "service": "smtp"
-        },
-        {
-            "port": "80",
-            "protocol": "tcp",
-            "service": "http"
-        },
-        {
-            "port": "2000",
-            "protocol": "tcp",
-            "service": "cisco-sccp"
-        },
-        {
-            "port": "5060",
-            "protocol": "tcp",
-            "service": "sip"
-        },
-        {
-            "port": "8008",
-            "protocol": "tcp",
-            "service": "http"
-        }
-    ]
+    "open_ports": []
 }

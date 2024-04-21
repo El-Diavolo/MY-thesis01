@@ -76,12 +76,12 @@ def run_ffuf(lfi_file, payloads_file):
         logger.info(f"Running FFUF on URL: {url}")
         print(f"Running FFUF on URL: {url}")
 
-        command = ["ffuf", "-u", url, "-mr", "root:x", "-w", payloads_file, "-r", "-rate", "10"]  # Set lower rate for requests
+        command = ["ffuf", "-u", url, "-mr", "root:x", "-w", payloads_file, "-r"]  # Set lower rate for requests
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         try:
             # Adjust the timeout based on typical response time expectations
-            stdout, stderr = process.communicate(timeout=60)  # Timeout set to 60 seconds
+            stdout, stderr = process.communicate(timeout=180)  # Timeout set to 60 seconds
 
             for line in stdout.splitlines():
                 cleaned_line = clean_ansi_sequences(line)

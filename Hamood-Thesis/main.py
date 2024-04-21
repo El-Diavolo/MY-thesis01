@@ -12,10 +12,10 @@ from modules.web import (
     run_tech_stack_detection,
     run_eyewitness,
     run_gospider,
-    run_katana,
+    run_crawler,
     run_xss,
     lfi_scan,
-    run_sqli
+    sqli_scan
 )
 from modules.network import scan_common_ports
 
@@ -51,7 +51,7 @@ def main(target_domain):
     
     Phase_2 = [
                 ('Run HTTPx', run_httpx, (subdomains_dir,)),
-                ('katana' , run_katana, (target_domain, katana_dir))
+                ('katana' , run_crawler, (target_domain,))
                 
     ]
 
@@ -74,7 +74,7 @@ def main(target_domain):
     ]
 
     Phase_6 = [
-        ('Run SQLI Scan' , run_sqli, (katana_dir,sqli_dir)),
+        ('Run SQLI Scan' , sqli_scan, (katana_dir,sqli_dir)),
     ]
 
     # Execute tasks
