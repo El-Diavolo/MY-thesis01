@@ -74,7 +74,7 @@ def main(target_domain):
     ]
 
     Phase_6 = [
-        ('Run SQLI Scan' , sqli_scan, (katana_dir,sqli_dir)),
+        ('Run SQLI Scan' , sqli_scan, (target_domain,)),
     ]
 
     # Execute tasks
@@ -83,7 +83,7 @@ def main(target_domain):
     execute_tasks(Phase_3, "Phase 3: crawling")
     execute_tasks(Phase_4, "Phase 4: LFI tests")
     execute_tasks(Phase_5, "Phase 5: Xss tests")
-    execute_tasks(Phase_6, "Phase 5: SQLI tests")
+    execute_tasks(Phase_6, "Phase 6: SQLI tests")
 
 
 def execute_tasks(tasks, phase_description):

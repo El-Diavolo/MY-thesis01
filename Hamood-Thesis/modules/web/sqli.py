@@ -1,106 +1,109 @@
 import subprocess
 import os
 import json
-import glob
-import logging
 import re
-import urllib.parse
+import logging
 
-# Set up logging for debugging
+# Set up logging for debugging and progress monitoring
 def setup_logger():
-    logger = logging.getLogger('XSS_Detection')
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger("SQLI_Detection")
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
     return logger
 
-# Extract URLs that contain known XSS vulnerabilities
-def filter_xss_urls(input_file, xss_file):
+# Run gau to collect URLs from the given domain
+def run_gau(target_domain, output_file):
+    command = ["gau", target_domain, "--o", output_file]
     logger = setup_logger()
-    with open(xss_file, 'w') as output:
-        command = ["gf", "xss", input_file]
-        subprocess.run(command, stdout=output)
-    logger.info(f"XSS URLs filtered and written to {xss_file}")
-
-# Run XSSVibe on the URLs
-def run_xssvibe(xss_output, xssvibe_results_file):
-    xssvibes_dir = "/opt/xss_vibes"
-    os.chdir(xssvibes_dir)
-    command = ["python3", "main.py", "-f", xss_output, "-o", xssvibe_results_file, "-t", "100"]
     try:
         subprocess.run(command, check=True)
-        print(f"XSSVibe successfully processed and output saved to {xssvibe_results_file}")
+        logger.info(f"gau completed for {target_domain}, results saved to {output_file}")
     except subprocess.CalledProcessError as e:
-        print(f"Failed to run XSSVibe: {e}")
+        logger.error(f"Failed to run gau for {target_domain}: {str(e)}")
 
-# Run Dalfox on the URLs to find potential vulnerabilities
-def run_dalfox(xss_output, dalfox_results_file):
-    command = ["dalfox", "file", xss_output, "-o", dalfox_results_file, "--custom-alert-value", "calfcrusher", "--waf-evasion", "-F"]
+# Filter SQL injection-prone URLs using gf
+def filter_sqli_urls(input_file, output_file):
+    command = ["gf", "sqli", input_file]
+    logger = setup_logger()
+    with open(output_file, 'w') as outfile:
+        subprocess.run(command, stdout=outfile)
+        logger.info(f"Filtered SQLi URLs and written to {output_file}")
+
+# Run sqlmap with specified options and save extracted details to JSON
+def run_sqlmap(sqli_file, json_output):
+    command = [
+        "sqlmap",
+        "-m", sqli_file,
+        "--level", "5",
+        "--risk", "3",
+        "--batch",
+        "--dbms", "mysql",
+        "--tamper", "between",
+        "--skip-static"
+    ]
+    logger = setup_logger()
+
     try:
-        subprocess.run(command, check=True)
-        print(f"Dalfox output saved to {dalfox_results_file}")
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to run Dalfox: {e}")
+        # Capture sqlmap output
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
 
-# Extract vulnerable URLs from Dalfox results, focusing on [POC] tags
-def extract_dalfox_vulnerable_urls(dalfox_results_file):
-    logger = setup_logger()
-    vulnerable_urls = []
-    with open(dalfox_results_file, 'r') as file:
-        for line in file:
-            if "[POC]" in line:
-                url_match = re.search(r'https?://\S+', line)
-                if url_match:
-                    url = url_match.group()
-                    payload = line.strip()
-                    vulnerable_urls.append({
-                        "url": url,
-                        "payload": payload
-                    })
-    return vulnerable_urls
+        # Regex to extract SQL injection information
+        sqli_pattern = re.compile(
+            r"Parameter: (.*?)\s*\((.*?)\)\s+"
+            r"(Type: .*?Payload:.*?)\s*--",  # Capture everything from Type to Payload until double hyphen
+            re.DOTALL
+        )
 
-# Compile results into a JSON output
-def compile_results_to_json(xss_dir, target_domain, final_json_output):
-    logger = setup_logger()
-    all_results = []
+        # Extract URLs being tested
+        url_pattern = re.compile(r"testing URL '(.*?)'")
+        url_matches = url_pattern.findall(result.stdout)
 
-    # Extract from XSSVibe results
-    xssvibe_results_file = os.path.join(xss_dir, f"xssvibe_results_{target_domain}.txt")
-    with open(xssvibe_results_file, 'r') as file:
-        for line in file:
-            url_match = re.search(r'https?://\S+', line)
-            if url_match:
-                url = url_match.group()
-                all_results.append({
+        # Capture SQL injection information
+        vulnerable_info = []
+        for match in sqli_pattern.finditer(result.stdout):
+            parameter = match.group(1).strip()
+            http_method = match.group(2).strip()
+
+            # Extract detailed SQLi information
+            details = match.group(3)
+            sql_type = re.search(r"Type: (.*?)\s+", details).group(1).strip()
+            title = re.search(r"Title: (.*?)\s+", details).group(1).strip()
+            payload = re.search(r"Payload: (.*?)\s+", details).group(1).strip()
+
+            # Append all relevant information
+            for url in url_matches:
+                vulnerable_info.append({
                     "url": url,
-                    "payload": "XSSVibe"
+                    "parameter": parameter,
+                    "http_method": http_method,
+                    "sql_injection_type": sql_type,
+                    "title": title,
+                    "payload": payload
                 })
 
-    # Extract from Dalfox results with [POC]
-    dalfox_results_file = os.path.join(xss_dir, f"dalfox_results_{target_domain}.txt")
-    vulnerable_urls = extract_dalfox_vulnerable_urls(dalfox_results_file)
-    all_results.extend(vulnerable_urls)
+        # Save results to JSON
+        with open(json_output, 'w') as json_file:
+            json.dump(vulnerable_info, json_file, indent=4)
 
-    # Save to JSON
-    with open(final_json_output, 'w') as file:
-        json.dump(all_results, file, indent=4)
-    logger.info(f"Compiled JSON results saved to {final_json_output}")
+        logger.info(f"sqlmap results saved to {json_output}")
 
-def run_xss():
-    katana_dir = "/mnt/d/MY-thesis01/Hamood-Thesis/results/katana"
-    xss_dir = "/mnt/d/MY-thesis01/Hamood-Thesis/results/xss"
-    os.makedirs(xss_dir, exist_ok=True)
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Failed to run sqlmap on {sqli_file}: {str(e)}")
 
-    for katana_output in glob.glob(os.path.join(katana_dir, '*')):
-        target_domain = os.path.basename(katana_output).replace("_", ".").replace(".txt", "")
-        urls_xss_path = os.path.join(xss_dir, f"urls_xss_{target_domain}.txt")
-        xssvibe_results_file = os.path.join(xss_dir, f"xssvibe_results_{target_domain}.txt")
-        dalfox_results_file = os.path.join(xss_dir, f"dalfox_results_{target_domain}.txt")
-        final_json_output = os.path.join(xss_dir, f"final_xss_results_{target_domain}.json")
+# Main function to run gau, filter URLs, and execute sqlmap
+def sqli_scan(target_domain):
+    output_dir = "results/sqli"
+    os.makedirs(output_dir, exist_ok=True)
 
-        filter_xss_urls(katana_output, urls_xss_path)
-        run_xssvibe(urls_xss_path, xssvibe_results_file)
-        run_dalfox(urls_xss_path, dalfox_results_file)
+    gau_file = os.path.join(output_dir, "fgau.txt")  # Output from gau
+    sqli_file = os.path.join(output_dir, "sqli_filtered.txt")  # Filtered SQLi-prone URLs
+    json_output = os.path.join(output_dir, "sqli_results.json")  # Final JSON output
 
-        compile_results_to_json(xss_dir, target_domain, final_json_output)
+    # Run gau, filter SQLi URLs, and execute sqlmap
+    run_gau(target_domain, gau_file)
+    filter_sqli_urls(gau_file, sqli_file)
+    run_sqlmap(sqli_file, json_output)
 
+# Entry point for the script
 if __name__ == "__main__":
-    run_xss()
+    target_domain = "testphp.vulnweb.com"
+    sqli_scan(target_domain)
